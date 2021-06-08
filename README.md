@@ -7,7 +7,7 @@ Clone this -> ' npm install --save firebase ' -> yarn init
 ```javascript
 ** firebase.js **
 
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 
 // firebase console 에서 project 생성 후 발급받은 key 복붙
 const firebaseConfig = {
