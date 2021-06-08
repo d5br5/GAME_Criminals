@@ -31,7 +31,7 @@ export default firebase.initializeApp(firebaseConfig);
 - 프로젝트 이름 아무거나 입력 (ex. team6) 후 '계속'
 - 이 프로젝트에서 Google 애널리틱스 사용 설정 '해제'
 - 프로젝트 생성 후, '앱을 추가하여 시작하기' 부분 버튼 중 '</>' 클릭
-- 앱 닉에네임 아무거나 입력, 호스팅 설정 '체크X'
+- 앱 닉네임 아무거나 입력(team6), 호스팅 설정 '체크X'
 - 발급된 SDK 문서에 존재하는 key 복사 후 firebase.js에 붙여넣기
 
 
