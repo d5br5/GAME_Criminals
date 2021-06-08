@@ -1,6 +1,6 @@
 # 시작하기 전에
 
-:boom: Clone this -> $ npm install -> $ yarn start :boom:
+:boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 브라우저 콘솔에 'FirebaseAppImpl' 객체 출력되는지  :boom:
 
 :boom: yarn 시작 전에 _firebase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
 
