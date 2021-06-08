@@ -1,12 +1,13 @@
+import React from "react";
 import Testdiv from "./Testdiv";
 
 function App() {
-  return (
-    <div className="App">
-      Welcome team6
-        <Testdiv/>
-    </div>
-  );
+    return (
+        <div className="App">
+            Welcome team6
+            <Testdiv/>
+        </div>
+    );
 }
 
 export default App;
