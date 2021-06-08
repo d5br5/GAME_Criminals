@@ -1,16 +1,42 @@
-# project
+# 시작하기 전에
+
+Clone this -> ' npm install --save firebase ' -> yarn init
+
+:boom: Node 시작 전에 _firebase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
+
+```javascript
+** firebase.js **
+
+import * as firebase from "firebase/app";
+
+// firebase console 에서 project 생성 후 발급받은 key 복붙
+const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+};
+
+// Initialize Firebase
+export default firebase.initializeApp(firebaseConfig);
+```
+
+
+## project
 
 - OPEN API + firebase를 이용한 웹 어플리케이션을 제작
 - 조별주제는 https://docs.google.com/spreadsheets/d/1cysxO9JDLIQH0y6yMfmX8KUYX-H2HyHp9BjaRMaBl-U/edit#gid=0 
 
 
-# library
+## library
 
 - react, eslint, github 이용을 필수로 한다.
 - 별도의 외부 라이브러리 사용할 수 있다.
 
 
-# 발표
+## 발표
 
 - 발표는 4,3,1,2,7,6,5 조 순으로 한다.
 - 발표 자료는 23일 18시 이전 mongmaker721@gmail.com 으로 제출한다.
@@ -24,7 +50,7 @@
 - 발표 평가는 강사 평가(20) + 조별 평가(80)으로, 발표전에 미리 제공하는 채점표에 의거하여 각 개인이 다른 조를 평가한다.
 - 점표는 주제, 문제해결, 제품의 마감 세 가지를 기본으로 하여 제공된다.
 
-# code
+## code
 
 - 코드는 github.com public repository 로 제출한다.
 - 각 조별로 해당 깃헙 이슈로 repo url을 남긴다.
@@ -38,7 +64,7 @@
 를 주로 하여 평가한다. (중요도 순 정렬.)
 
 
-# 점수
+## 점수
 
 - 제품에 대한 평가 (25) + 발표 평가(25) + 코드 평가 (50) 의 합산으로 이루어진다.
 - 코드 평가는 개인별 작업량 및 난이도에 따라 같은 조여도 상이할 수 있다.
