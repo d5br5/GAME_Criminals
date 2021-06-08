@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- OPEN API + firebase를 이용한 웹 어플리케이션을 제작
+- 조별주제는 https://docs.google.com/spreadsheets/d/1cysxO9JDLIQH0y6yMfmX8KUYX-H2HyHp9BjaRMaBl-U/edit#gid=0 
 
-## Available Scripts
 
-In the project directory, you can run:
+# library
 
-### `yarn start`
+- react, eslint, github 이용을 필수로 한다.
+- 별도의 외부 라이브러리 사용할 수 있다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# 발표
 
-### `yarn test`
+- 발표는 4,3,1,2,7,6,5 조 순으로 한다.
+- 발표 자료는 23일 18시 이전 mongmaker721@gmail.com 으로 제출한다.
+- 발표는 
+  - 발표 주제
+  - 과제 하면서 제일 중심을 뒀던 부분
+  - 실제 제품 실행
+  - 개발하면서 실제 겪은 에로사항 및 해결방안
+을 기반으로 발표한다. 총 발표시간은 조별로 10~15분 가량이다.
+- ppt에 심한 공을 기울이지 말 것.
+- 발표 평가는 강사 평가(20) + 조별 평가(80)으로, 발표전에 미리 제공하는 채점표에 의거하여 각 개인이 다른 조를 평가한다.
+- 점표는 주제, 문제해결, 제품의 마감 세 가지를 기본으로 하여 제공된다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# code
 
-### `yarn build`
+- 코드는 github.com public repository 로 제출한다.
+- 각 조별로 해당 깃헙 이슈로 repo url을 남긴다.
+- 코드의 평가는 repo의 마스터 브랜치의 23일 17시까지 올라온 최신 본을 기준으로 한다. 단, 이전 버전으로의 평가를 원할 시 따로 해당 사안을 전달할 수 있다.
+- 코드 평가 요소는
+  - 주어진 기능들을 적절히 잘 만들었는가
+  - react의 기능들을 적절하게 잘 사용했는가
+  - web request를 잘 모듈화하고, 해당 기능에 대한 ux 및 에러핸들링을 적절히 하였는가
+  - 설치한 라이브러리를 잘 이해하고 적절히 사용했는가
+  - lint, 변수명을 잘 썻는가. 기능별로 파일을 잘 분리하였는가
+를 주로 하여 평가한다. (중요도 순 정렬.)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 점수
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 제품에 대한 평가 (25) + 발표 평가(25) + 코드 평가 (50) 의 합산으로 이루어진다.
+- 코드 평가는 개인별 작업량 및 난이도에 따라 같은 조여도 상이할 수 있다.
