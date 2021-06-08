@@ -1,6 +1,6 @@
 # 시작하기 전에
 
-Clone this -> $npm install -> $yarn start
+:boom: Clone this -> $ npm install -> $ yarn start :boom:
 
 :boom: yarn 시작 전에 _firebase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
 
