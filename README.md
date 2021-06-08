@@ -1,8 +1,8 @@
 # 시작하기 전에
 
-Clone this -> ' npm install --save firebase ' -> yarn init -> yarn start
+Clone this -> $npm install -> $yarn start
 
-:boom: Node 시작 전에 _firebase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
+:boom: yarn 시작 전에 _firebase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
 
 ```javascript
 ** firebase.js **
@@ -22,6 +22,7 @@ const firebaseConfig = {
 // Initialize Firebase
 export default firebase.initializeApp(firebaseConfig);
 ```
+
 
 
 ## project
