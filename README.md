@@ -2,12 +2,16 @@
 
 :boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 브라우저 콘솔에 'FirebaseAppImpl' 객체 출력되는지 확인 :boom:
 
-:boom: yarn 시작 전에 _firebase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
+:boom: yarn 시작 전에 _fbase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
 
 ```javascript
-** firebase.js **
+** fbase.js **
 
 import firebase from "firebase/app";
+
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
 
 // firebase console 에서 project 생성 후 발급받은 key 복붙
 const firebaseConfig = {
