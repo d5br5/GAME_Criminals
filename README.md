@@ -26,7 +26,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export default firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+
+export const firebaseInstance = firebase;
+export const dbService = firebase.firestore();
+export const authService = firebase.auth();
+export const storageService = firebase.storage();
+export default authService;
 ```
 
 ### firebase key 발급 방법
