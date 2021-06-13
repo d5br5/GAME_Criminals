@@ -47,7 +47,7 @@ export default firebase.initializeApp(firebaseConfig);
 
 ## library
 
-- react, eslint, github 이용을 필수로 한다.
+- react, github 이용을 필수로 한다.
 - 별도의 외부 라이브러리 사용할 수 있다.
 
 
