@@ -1,4 +1,4 @@
-# 시작하기 전에
+## 시작하기 전에
 
 :boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 브라우저 콘솔에 'FirebaseAppImpl' 객체 출력되는지 확인 :boom:
 
@@ -29,7 +29,7 @@ const firebaseConfig = {
 export default firebase.initializeApp(firebaseConfig);
 ```
 
-## firebase key 발급 방법
+### firebase key 발급 방법
 
 - firebase 홈페이지 접속 후 구글 로그인: https://firebase.google.com/
 - 우측 상단 '콘솔로 이동' 버튼 클릭
@@ -41,44 +41,44 @@ export default firebase.initializeApp(firebaseConfig);
 - 발급된 SDK 문서에 존재하는 key 복사 후 firebase.js에 붙여넣기
 
 
-# PROJECT - 범죄자 관상 테스트
-## DB
+## PROJECT - 범죄자 관상 테스트
+### DB
 - 범죄자 : 이름, 사진, 죄목, 형량
 - 유저 : 계정, 닉네임, 푼 문제사진, 완료 경기 수, 티어, 포인트
 
-## 레벨
+### 레벨
 - 게임 '리그오브레전드' 와 유사한 랭크 제도
 - 전체 유저를 포인트 순으로 나열 후 일정 비율 구간으로 분할하여 등급 부여
 - ex) Lv1 40% / Lv2 30% / Lv3 20% / Lv4 10%
 
-## 게임
+### 게임
 - '게임시작' 버튼 클릭으로 시작
 - DB에 저장된 사진과 이름이 화면 상에 2쌍 출력 (ex. '김길동, 사진' vs '홍길동, 사진')
 - 형량이 높을 것 같은 사람을 관상만으로 선택, 이후 즉시 정답 공개
 - 총 10세트 진행 후 게임 종료. 종료 후 최종 스코어 (x개/10개) 출력
 - 경험치 획득 (0-2개 : 강한 하락 / 3-4개 : 약한 하락 / 5-6개 : 변동X / 7-8개 : 약한 상승 / 9-10개 : 강한 상승)
 
-## 유저 프로필
+### 유저 프로필
 - 계정, 닉네임, 완료 경기 수, 티어, 포인트 확인 가능
 
-## 랭킹
+### 랭킹
 - 티어별(포인트별) 내림차순 정렬
 
 
-# 공지사항
-## project
+## 공지사항
+### project
 
 - OPEN API + firebase를 이용한 웹 어플리케이션을 제작
 - 조별주제는 https://docs.google.com/spreadsheets/d/1cysxO9JDLIQH0y6yMfmX8KUYX-H2HyHp9BjaRMaBl-U/edit#gid=0 
 
 
-## library
+### library
 
 - react, github 이용을 필수로 한다.
 - 별도의 외부 라이브러리 사용할 수 있다.
 
 
-## 발표
+### 발표
 
 - 발표는 4,3,1,2,7,6,5 조 순으로 한다.
 - 발표 자료는 23일 18시 이전 mongmaker721@gmail.com 으로 제출한다.
@@ -92,7 +92,7 @@ export default firebase.initializeApp(firebaseConfig);
 - 발표 평가는 강사 평가(20) + 조별 평가(80)으로, 발표전에 미리 제공하는 채점표에 의거하여 각 개인이 다른 조를 평가한다.
 - 점표는 주제, 문제해결, 제품의 마감 세 가지를 기본으로 하여 제공된다.
 
-## code
+### code
 
 - 코드는 github.com public repository 로 제출한다.
 - 각 조별로 해당 깃헙 이슈로 repo url을 남긴다.
@@ -106,7 +106,7 @@ export default firebase.initializeApp(firebaseConfig);
 를 주로 하여 평가한다. (중요도 순 정렬.)
 
 
-## 점수
+### 점수
 
 - 제품에 대한 평가 (25) + 발표 평가(25) + 코드 평가 (50) 의 합산으로 이루어진다.
 - 코드 평가는 개인별 작업량 및 난이도에 따라 같은 조여도 상이할 수 있다.
