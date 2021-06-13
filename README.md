@@ -39,6 +39,7 @@ export default firebase.initializeApp(firebaseConfig);
 - 발급된 SDK 문서에 존재하는 key 복사 후 firebase.js에 붙여넣기
 
 
+# 공지사항
 ## project
 
 - OPEN API + firebase를 이용한 웹 어플리케이션을 제작
