@@ -46,7 +46,9 @@ export default authService;
 - 앱 닉네임 아무거나 입력(team6), 호스팅 설정 '체크X'
 - 발급된 SDK 문서에 존재하는 key 복사 후 firebase.js에 붙여넣기
 
-:boom: FB Console -> authentication -> sign-in methods -> '이메일/비밀번호','google' 사용 설정 :boom: 
+### firebase 사전 설정
+- FB Console -> authentication -> sign-in methods -> '이메일/비밀번호','google' 사용 설정
+- Firestore Database 생성 -> testmode -> timezone 'northeast3'
 
 
 ## PROJECT - 범죄자 관상 테스트
