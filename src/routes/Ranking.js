@@ -6,7 +6,8 @@ const Ranking = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        dbService.collection("users").onSnapshot(snapshot => {
+        dbService.collection("users")
+            .orderBy("point", "desc").onSnapshot(snapshot => {
             setUsers(snapshot.docs.map(doc => ({
                 id: doc.id, ...doc.data()
             })));
@@ -14,6 +15,7 @@ const Ranking = () => {
     },[])
 
     return <div>
+
         {
             users.map((user, index) => (
                     <div key={index}>
