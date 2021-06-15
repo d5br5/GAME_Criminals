@@ -4,11 +4,9 @@
 
 :boom: firebase 콘솔을 공유하는게 편할 것 같네용.. 수정하겠습니다.
 
-:boom: yarn 시작 전에 _fbase.js_ 파일을 src 디렉토리 안에 넣어 주세요. :boom:
-
 :boom: 코드 작성 중 발생하는 모든 문제는 이슈에 남겨주세요. :boom:
 
-
+<!-- 
 ```javascript
 ** fbase.js **
 
@@ -52,7 +50,7 @@ export default authService;
 ### firebase 사전 설정
 - FB Console -> authentication -> sign-in methods -> '이메일/비밀번호','google' 사용 설정
 - Firestore Database 생성 -> testmode -> timezone 'northeast3'
-
+ -->
 
 ## PROJECT - 범죄자 관상 테스트
 ### DB
