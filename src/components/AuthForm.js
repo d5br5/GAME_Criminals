@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import authService from "../fbase";
+import {authService, dbService} from "../fbase";
+
 
 function AuthForm({authMode}) {
 
@@ -8,28 +9,32 @@ function AuthForm({authMode}) {
     const [nickName, setNickName] = useState("");
     const [error, setError] = useState("");
 
+    const point = 50;
+
     async function onSubmit(e) {
         e.preventDefault();
-        let data;
         try {
             if (authMode === 'SignUp') {
                 await authService.createUserWithEmailAndPassword(email, password)
                     .then(res => {
-                            const user = authService.currentUser;
-                            return user.updateProfile({
+                            const currUser = authService.currentUser;
+                            currUser.updateProfile({
                                 displayName: nickName
-                            })
+                            });
+                            dbService.collection("users").doc(currUser.uid).set({
+                                id: currUser.uid, nickName, point
+                            });
                         }
-                    );
+                    )
             } else if (authMode === 'SignIn') {
-                data = await authService.signInWithEmailAndPassword(email, password);
+                await authService.signInWithEmailAndPassword(email, password);
             }
         } catch (error) {
             setError(error.message);
         }
     }
 
-    return (<>
+    return (
         <form onSubmit={onSubmit}>
             <input
                 name="email" type="email" placeholder="Email" required
@@ -47,7 +52,7 @@ function AuthForm({authMode}) {
                 type="submit" value={authMode === 'SignUp' ? "Create Account" : "Sign In"}/>
             {error && <span>{error}</span>}
         </form>
-    </>);
+    );
 }
 
 export default AuthForm;

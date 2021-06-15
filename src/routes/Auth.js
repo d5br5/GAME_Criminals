@@ -1,11 +1,12 @@
 import React,{useState} from "react";
-import authService, {firebaseInstance} from "../fbase";
+import authService, {dbService, firebaseInstance} from "../fbase";
 import AuthForm from "../components/AuthForm";
 
 const Auth = () =>{
 
     const [authMode, setAuthMode] = useState('signIn');
     const [processing, setProcessing] = useState(false);
+    const point = 60;
 
     async function onSocialClick(e) {
         const {target: {name}} = e;
@@ -13,8 +14,15 @@ const Auth = () =>{
         if (name === "google") {
             provider = new firebaseInstance.auth.GoogleAuthProvider();
         }
-        const data = await authService.signInWithPopup(provider);
-        console.log(data);
+        await authService.signInWithPopup(provider)
+            .then((res)=>{
+                if(res.additionalUserInfo.isNewUser){
+                    dbService.collection("users").doc(res.user.uid).set({
+                        id: res.user.uid, nickName:res.user.displayName, point
+                    })
+                }
+            })
+
     }
 
     return (
