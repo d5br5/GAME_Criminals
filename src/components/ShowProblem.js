@@ -1,13 +1,23 @@
 import {useState, useEffect} from 'react';
-import {storageService} from "../fbase";
+import {dbService, storageService} from "../fbase";
 
+const kindOfCrimes = 31;
+const listOfCrimes = [];
+
+for (let i = 1; i < kindOfCrimes + 1; i++) {
+    dbService.collection("crimes").doc(i.toString()).get()
+        .then((doc) => {
+        listOfCrimes.push(doc.data().crime);
+    });
+}
 
 const ShowProblem = ({criminals}) => {
 
     const [stage, setStage] = useState(0);
     const [imgUrlArray, setImageUrlArray] = useState('');
     const [init, setInit] = useState(false);
-    const currCriminal = criminals[stage];
+    const currCriminal = criminals[stage]
+
     useEffect(() => {
         let imgUrls = [];
         async function fetchImgs() {
@@ -41,12 +51,32 @@ const ShowProblem = ({criminals}) => {
         }
     }
 
+    const filteredCrimes = listOfCrimes.filter((element) => element !== criminals[stage].crime);
+    const randNumForCrime = Math.ceil(Math.random() * (kindOfCrimes - 2));
+    const randomMatchCrime = filteredCrimes[randNumForCrime];
+    const crimeMatchList = [criminals[stage].crime, randomMatchCrime];
+    const randNumForButton = Math.ceil(Math.random() * 2) - 1;
+    let buttonOne = ''
+    let buttonTwo = ''
+
+    if (randNumForButton === 0) {
+        buttonOne = crimeMatchList.pop();
+        buttonTwo = crimeMatchList[0];
+    } else {
+        buttonOne = crimeMatchList.shift();
+        buttonTwo = crimeMatchList[0];
+    }
+
     return init ? <div className="oneProblem">
         {currCriminal.index} / {currCriminal.name} / {currCriminal.crime}
         <img src={imgUrlArray[stage]} alt=""/>
         <div className="movingConsole">
             <button onClick={goPrevStage} disabled={stage === 0}>prev</button>
             <button onClick={goNextStage} disabled={stage === criminals.length - 1}>next</button>
+        </div>
+        <div>
+            <button>{buttonOne}</button>
+            <button>{buttonTwo}</button>
         </div>
     </div> : <div>[Game Loading...]</div>
 
