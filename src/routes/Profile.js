@@ -1,20 +1,24 @@
 import React from "react";
-import {authService} from "../fbase";
-import {useHistory} from "react-router-dom";
+import { authService } from "../fbase";
+import { useHistory } from "react-router-dom";
 
-const Profile = ({userObj}) =>{
+const Profile = ({ userObj }) => {
+  const history = useHistory();
 
-    const history = useHistory();
+  async function onLogOutClick() {
+    await authService.signOut();
+    history.push("/");
+  }
 
-    async function onLogOutClick() {
-        await authService.signOut();
-        history.push("/");
-    }
-
-    return <div>
-        username : {userObj.displayName}
-        <button onClick={onLogOutClick}>Log out</button>
+  return (
+    <div>
+      username : {userObj.displayName}
+      <br />
+      point: {userObj.point}
+      <br />
+      <button onClick={onLogOutClick}>Log out</button>
     </div>
+  );
 };
 
 export default Profile;

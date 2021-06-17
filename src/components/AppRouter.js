@@ -1,47 +1,51 @@
 import React from "react";
-import {HashRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Navigation from "./Navigation";
-import Auth from "../routes/Auth";
-import Home from "../routes/Home";
-import Profile from "../routes/Profile";
-import Game from "../routes/Game";
-import Ranking from "../routes/Ranking";
+import { Auth, Home, Profile, Game, Ranking } from "../routes";
 
-function AppRouter({isLoggedIn, userObj}) {
-
+function AppRouter({ isLoggedIn, userObj }) {
+  if (!isLoggedIn) {
     return (
-        <div>
-            <Router>
-                {isLoggedIn && <Navigation userObj={userObj}/>}
-                <Switch>
-                    {isLoggedIn ? (
-                        <>
-                            <Route exact={true} path="/" replace>
-                                <Home userObj={userObj}/>
-                            </Route>
-                            <Route exact={true} path="/profile" replace>
-                                <Profile userObj={userObj}/>
-                            </Route>
-                            <Route exact={true} path="/game" replace>
-                                <Game useObj={userObj}/>
-                            </Route>
-                            <Route exact={true} path="/ranking" replace>
-                                <Ranking/>
-                            </Route>
-                            <Redirect from="*" to="/"/>
-                        </>
-                    ) : (
-                        <>
-                            <Route exact={true} path="/">
-                                <Auth/>
-                            </Route>
-                            <Redirect from="*" to="/"/>
-                        </>
-                    )}
-                </Switch>
-            </Router>
-        </div>
+      <div>
+        <Router>
+          <Navigation userObj={userObj} />
+          <Switch>
+            <Route exact path="/">
+              <Auth />
+            </Route>
+            <Redirect from="*" to="/" />
+          </Switch>
+        </Router>
+      </div>
     );
+  }
+  return (
+    <div>
+      <Router>
+        <Navigation userObj={userObj} />
+        <Switch>
+          <Route exact path="/" replace>
+            <Home userObj={userObj} />
+          </Route>
+          <Route exact path="/profile" replace>
+            <Profile userObj={userObj} />
+          </Route>
+          <Route exact path="/game" replace>
+            <Game useObj={userObj} />
+          </Route>
+          <Route exact path="/ranking" replace>
+            <Ranking />
+          </Route>
+          <Redirect from="*" to="/" />
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default AppRouter;
