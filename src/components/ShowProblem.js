@@ -72,7 +72,7 @@ const ShowProblem = ({criminals}) => {
         e.preventDefault();
         if (stage <= 9) {
             if (e.target.innerText === criminals[stage].crime) {
-                setRightAnswer(rightAnswer + 1)
+                setRightAnswer(rightAnswer + 1);
             }
 
             if (stage < criminals.length - 1) {
