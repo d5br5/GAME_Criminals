@@ -16,6 +16,7 @@ const ShowProblem = ({criminals}) => {
     const [stage, setStage] = useState(0);
     const [imgUrlArray, setImageUrlArray] = useState('');
     const [init, setInit] = useState(false);
+    const [rightAnswer, setRightAnswer] = useState(0);
     const currCriminal = criminals[stage]
 
     useEffect(() => {
@@ -67,6 +68,19 @@ const ShowProblem = ({criminals}) => {
         buttonTwo = crimeMatchList[0];
     }
 
+    const answerCheck = async(e) => {
+        e.preventDefault();
+        if (stage <= 9) {
+            if (e.target.innerText === criminals[stage].crime) {
+                setRightAnswer(rightAnswer + 1)
+            }
+
+            if (stage < criminals.length - 1) {
+                setStage(stage + 1);
+            }
+        }
+    }
+
     return init ? <div className="oneProblem">
         {currCriminal.index} / {currCriminal.name} / {currCriminal.crime}
         <img src={imgUrlArray[stage]} alt=""/>
@@ -75,8 +89,11 @@ const ShowProblem = ({criminals}) => {
             <button onClick={goNextStage} disabled={stage === criminals.length - 1}>next</button>
         </div>
         <div>
-            <button>{buttonOne}</button>
-            <button>{buttonTwo}</button>
+            <button onClick={answerCheck}>{buttonOne}</button>
+            <button onClick={answerCheck}>{buttonTwo}</button>
+        </div>
+        <div>
+            <h2>{stage + 1} Round: {rightAnswer} / 10</h2>
         </div>
     </div> : <div>[Game Loading...]</div>
 
