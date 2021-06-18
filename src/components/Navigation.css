@@ -1,27 +1,19 @@
-.naviContainer {
+.navContainer {
     background-image: url("../assets/header.jpg");
     background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 120px;
 }
 
-.naviContainer ul {
-    margin: 0px;
-}
-
-.naviLeftContainer {
+.navLeftContainer {
     display: flex;
-    flex-direction: row;
+    max-width: 300px;
     position: fixed;
     left: 0;
 }
 
-.naviLeftContainer .navLink {
-    padding: 1rem;
-}
-
-.naviContainer .logo {
+.navContainer .logo {
     height: 80px;
 }

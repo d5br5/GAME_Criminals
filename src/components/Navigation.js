@@ -4,21 +4,20 @@ import "./Navigation.css"
 import logo from "../assets/logo.gif";
 
 const Navigation = ({userObj}) => {
-    return (<nav className="naviContainer">
-        {/* Lest Side Nav */}
-        <div className="naviLeftContainer">
+    return (<nav className="navContainer">
+        <div className="navLeftContainer">
+            <ul>
             <Link className="navLink" to="/">
-                Home
-            </Link>
-            <Link className="navLink" to='/profile'>
-                Profile
-            </Link>
-            <Link className="navLink" to="/ranking">
-                Ranking
-            </Link>
+                홈
+            </Link></ul>
+            <ul><Link className="navLink" to='/profile'>
+                프로필
+            </Link></ul>
+            <ul><Link className="navLink" to="/ranking">
+                랭킹
+            </Link></ul>
         </div>
 
-        {/* Center Logo */}
         <div>
             <img className="logo" src={logo} />
         </div>

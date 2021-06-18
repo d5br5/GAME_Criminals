@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {dbService, storageService} from "../fbase";
 import GameResult from "./GameResult";
+import "./GameBoard.css"
 
 const kindOfCrimes = 31;
 
@@ -113,13 +114,18 @@ const GameBoard = ({criminals, userObj, setUserObj}) => {
   ) : (
     init ? (!gameEnd ? (
         <div className="gameBoard">
-          <h2>[{stage+1} Round] 현재까지 정답 : {rightAnswer} /10 </h2>
-          <img src={imgUrlArray[stage]} alt=""/>
-          <h3>{currCriminal.name}</h3>
+          <div className="gameBoardContent">
+            <h1>{stage+1} ROUND</h1> 
+            <h2>맞춘개수 : {rightAnswer} /10 </h2>
+              <div className="img-wrapper">
+                <img src={imgUrlArray[stage]} alt=""/>
+              </div>
+            <h3>{currCriminal.name}</h3>
 
-          <div>
-            <button onClick={answerCheck}>{buttonOne}</button>
-            <button onClick={answerCheck}>{buttonTwo}</button>
+            <div className="btn">
+              <button className="btnLeft" onClick={answerCheck}>{buttonOne}</button>
+              <button className="btnRight" onClick={answerCheck}>{buttonTwo}</button>
+            </div>
           </div>
         </div>
       ) : (

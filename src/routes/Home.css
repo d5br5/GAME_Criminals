@@ -1,0 +1,46 @@
+.gameRule {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.gameRule h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    letter-spacing: 0.2rem;
+    position: relative;
+    top: -20px;
+    margin: 0px;
+  }
+
+.gameRuleMargin {
+    font-weight: bold;
+    margin: 30px;
+}
+
+.btnPlayGame {
+    font-family: 'Black Han Sans', sans-serif;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 30px;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+
+.btnPlayGame:hover {
+    cursor: pointer;
+    color: #ffffff;
+    border:#ffffff solid 1.5px;
+    border-radius: 10px;
+    background-color: #1b1b1b;
+}

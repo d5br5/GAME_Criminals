@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@800&display=swap');
+
+.gameBoard {
+    background-image: url("../assets/line_blackbox.jpg"), url("../assets/background.jpg");
+    background-size: 55%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+}
+
+.gameBoardContent {
+    position: relative;
+    top: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.img-wrapper {
+    position: relative;
+    top: -0.5rem;
+    width: 66.5%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+.img-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+.gameBoard h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.6rem;
+    margin:0px;
+  }
+  
+.gameBoard h2 {
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 1.6rem;
+  }
+
+.gameBoard h3 {
+      background-color: rgb(26, 26, 26);
+      width: 20rem;
+      height: 2.2rem;
+      border: 0.5px solid #fff;
+      text-align: center;
+      line-height: 2rem;
+      position: relative;
+      top: -8rem;
+  }
+
+.btn {
+    width: 100%;
+    padding: 0px 0px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+    top: -8rem;
+}
+
+.btnLeft {
+    font-family: 'Gothic A1', sans-serif;
+    width: 220px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.btnRight {
+    font-family: 'Gothic A1', sans-serif;
+    width: 220px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/*Game Result*/
+
+.gameResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.gameResult h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    letter-spacing: 0.2rem;
+    position: relative;
+    top: -20px;
+    margin: 0px;
+}
+
+.btnGoHome {
+    font-family: 'Black Han Sans', sans-serif;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 30px;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.btnGoHome:hover {
+    cursor: pointer;
+    color: #ffffff;
+    border:#ffffff solid 1.5px;
+    border-radius: 10px;
+    background-color: #1b1b1b;
+}

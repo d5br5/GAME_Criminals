@@ -39,8 +39,7 @@ const Game = ({useObj, setUserObj}) => {
   return (
     init &&
     criminals.length === numOfGames && (
-      <div>
-        <h2>Game</h2>
+      <div className="gameBody">
         {/* [ List of Criminals of This Game ] - 배포시 삭제
         {criminals.map((criminal, index) => (
           <div key={index}>
