@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { dbService, storageService } from "../fbase";
-import ShowProblem from "../components/ShowProblem";
+import { dbService } from "../fbase";
+import GameBoard from "../components/GameBoard";
 
 function getRandomNumbers(total, size) {
   let result = [];
@@ -18,7 +18,7 @@ function getRandomNumbers(total, size) {
   return result;
 }
 
-const Game = () => {
+const Game = ({useObj, setUserObj}) => {
   const numOfGames = 10;
   const numOfCriminals = 100;
   const problems = getRandomNumbers(numOfCriminals, numOfGames);
@@ -40,14 +40,15 @@ const Game = () => {
     init &&
     criminals.length === numOfGames && (
       <div>
-        [ List of Criminals of This Game ]
+        <h2>Game</h2>
+        [ List of Criminals of This Game ] - 배포시 삭제
         {criminals.map((criminal, index) => (
           <div key={index}>
             {index + 1} ----- index : {criminal.index} / name : {criminal.name}{" "}
             / crime : {criminal.crime}
           </div>
         ))}
-        <ShowProblem criminals={criminals} />
+        <GameBoard criminals={criminals} userObj={useObj} setUserObj={setUserObj}/>
       </div>
     )
   );

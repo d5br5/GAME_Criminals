@@ -12,15 +12,40 @@ code {
     monospace;
 }
 
+img{
+  height: 400px;
+  object-fit: cover;
+}
+
 .App{
   width: 800px;
   margin: 100px auto;
 }
 
 .oneProblem{
-  border : 1px solid black
+  border : 1px solid black;
+  text-align: center;
+  padding: 30px 0 50px 0;
 }
 
-.movingConsole{
+.ranking_table{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
 
+.ranking_eachUser{
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+.ranking_userName{
+  width : 70%;
+  text-align: left;
+}
+
+.ranking_userPoint{
+  width: 30%;
+  text-align: center;
 }

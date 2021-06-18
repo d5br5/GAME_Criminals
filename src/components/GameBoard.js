@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import { dbService, storageService } from "../fbase";
+import {useState, useEffect} from "react";
+import {dbService, storageService} from "../fbase";
+import GameResult from "./GameResult";
 
 const kindOfCrimes = 31;
 
@@ -39,12 +40,15 @@ async function fetchImgs(criminals) {
   return imgUrls;
 }
 
-const ShowProblem = ({ criminals }) => {
+const GameBoard = ({criminals, userObj, setUserObj}) => {
   const [stage, setStage] = useState(0);
   const [imgUrlArray, setImageUrlArray] = useState("");
   const [init, setInit] = useState(false);
   const [crimeList, setCrimeList] = useState([]);
   const [rightAnswer, setRightAnswer] = useState(0);
+  const [gameStart, setGameStart] = useState(false);
+  const [gameEnd, setGameEnd] = useState(false);
+
   const currCriminal = criminals[stage];
 
   useEffect(() => {
@@ -64,18 +68,6 @@ const ShowProblem = ({ criminals }) => {
       setImageUrlArray(e);
     });
   }, []);
-
-  const goPrevStage = () => {
-    if (stage > 0) {
-      setStage((e) => e - 1);
-    }
-  };
-
-  const goNextStage = () => {
-    if (stage < criminals.length - 1) {
-      setStage((e) => e + 1);
-    }
-  };
 
   const filteredCrimes = crimeList.filter(
     (element) => element !== criminals[stage].crime
@@ -105,34 +97,38 @@ const ShowProblem = ({ criminals }) => {
       if (stage < criminals.length - 1) {
         setStage(stage + 1);
       }
+      if (stage === criminals.length - 1) {
+        setGameEnd(true);
+      }
     }
   };
 
-  return init ? (
-    <div className="oneProblem">
-      {currCriminal.index} / {currCriminal.name} / {currCriminal.crime}
-      <img src={imgUrlArray[stage]} alt="" />
-      <div className="movingConsole">
-        <button onClick={goPrevStage} disabled={stage === 0}>
-          prev
-        </button>
-        <button onClick={goNextStage} disabled={stage === criminals.length - 1}>
-          next
-        </button>
-      </div>
-      <div>
-        <button onClick={answerCheck}>{buttonOne}</button>
-        <button onClick={answerCheck}>{buttonTwo}</button>
-      </div>
-      <div>
-        <h2>
-          {stage + 1} Round: {rightAnswer} / 10
-        </h2>
-      </div>
+  return !gameStart ? (
+    <div>
+      <button onClick={() => {
+        setGameStart(true)
+      }}>Game Start!
+      </button>
     </div>
   ) : (
-    <div>[Game Loading...]</div>
-  );
+    init ? (!gameEnd ? (
+        <div className="oneProblem">
+          <h2>[{stage+1} Round] 현재까지 정답 : {rightAnswer} /10 </h2>
+          <img src={imgUrlArray[stage]} alt=""/>
+          <h3>{currCriminal.name}</h3>
+
+          <div>
+            <button onClick={answerCheck}>{buttonOne}</button>
+            <button onClick={answerCheck}>{buttonTwo}</button>
+          </div>
+
+        </div>
+      ) : (
+        <GameResult rightAnswer={rightAnswer} userObj={userObj} setUserObj={setUserObj}/>
+      )
+    ) : (
+      <div>[Game Loading...]</div>
+    ))
 };
 
-export default ShowProblem;
+export default GameBoard;

@@ -18,7 +18,7 @@ function App() {
             point = e.data().point;
           });
         setUserObj({
-          displayName: user.displayName,
+          nickname: user.displayName,
           uid: user.uid,
           point,
         });
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       {init ? (
-        <AppRouter userObj={userObj} isLoggedIn={Boolean(userObj)} />
+        <AppRouter userObj={userObj} isLoggedIn={Boolean(userObj)} setUserObj={setUserObj} />
       ) : (
         "initializiing"
       )}

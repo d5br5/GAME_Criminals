@@ -12,10 +12,10 @@ const Profile = ({ userObj }) => {
 
   return (
     <div>
-      username : {userObj.displayName}
-      <br />
-      point: {userObj.point}
-      <br />
+      <h2>Profile</h2>
+      <p>username : {userObj.nickname}</p>
+      <p>point: {userObj.point}</p>
+
       <button onClick={onLogOutClick}>Log out</button>
     </div>
   );

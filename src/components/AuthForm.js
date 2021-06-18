@@ -4,7 +4,7 @@ import { authService, dbService } from "../fbase";
 function AuthForm({ authMode }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [nickName, setNickName] = useState("");
+  const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
 
   const point = 50;
@@ -18,11 +18,11 @@ function AuthForm({ authMode }) {
           .then((res) => {
             const currUser = authService.currentUser;
             currUser.updateProfile({
-              displayName: nickName,
+              displayName: nickname,
             });
             dbService.collection("users").doc(currUser.uid).set({
               id: currUser.uid,
-              nickName,
+              nickname,
               point,
             });
           });
@@ -56,11 +56,11 @@ function AuthForm({ authMode }) {
       {authMode === "SignUp" && (
         <input
           type="text"
-          name="nickName"
+          name="nickname"
           required
-          placeholder="nickName"
-          value={nickName}
-          onChange={(e) => setNickName(e.target.value)}
+          placeholder="nickname"
+          value={nickname}
+          onChange={(e) => setNickname(e.target.value)}
         />
       )}
 

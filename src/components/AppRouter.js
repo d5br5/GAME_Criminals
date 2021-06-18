@@ -8,7 +8,7 @@ import {
 import Navigation from "./Navigation";
 import { Auth, Home, Profile, Game, Ranking } from "../routes";
 
-function AppRouter({ isLoggedIn, userObj }) {
+function AppRouter({ isLoggedIn, userObj, setUserObj }) {
   if (!isLoggedIn) {
     return (
       <div>
@@ -36,7 +36,7 @@ function AppRouter({ isLoggedIn, userObj }) {
             <Profile userObj={userObj} />
           </Route>
           <Route exact path="/game" replace>
-            <Game useObj={userObj} />
+            <Game useObj={userObj} setUserObj={setUserObj}/>
           </Route>
           <Route exact path="/ranking" replace>
             <Ranking />
