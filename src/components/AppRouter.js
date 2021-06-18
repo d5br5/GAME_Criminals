@@ -13,10 +13,10 @@ function AppRouter({isLoggedIn, userObj, setUserObj}) {
     return (
       <div>
         <Router>
+          <Navigation userObj={userObj} isLoggedIn={isLoggedIn}/>
           <Switch>
             <Route exact path="/">
               <Home isLoggedIn={isLoggedIn}/>
-              <Auth />
             </Route>
             <Redirect from="*" to="/"/>
           </Switch>
@@ -27,7 +27,7 @@ function AppRouter({isLoggedIn, userObj, setUserObj}) {
   return (
     <div>
       <Router>
-        <Navigation userObj={userObj}/>
+        <Navigation userObj={userObj} isLoggedIn={isLoggedIn}/>
         <Switch>
           <Route exact path="/" replace>
             <Home isLoggedIn={isLoggedIn}/>

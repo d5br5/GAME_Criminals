@@ -23,23 +23,23 @@ const Ranking = () => {
   const numOfUsers = users.length;
 
   for (let i = 1; i < numOfUsers + 1; i++) {
-      if (i <= Math.floor(numOfUsers/10)) {
-          giveLevelBox.push(levelBox[3]);
-      } else if (i <= Math.floor(numOfUsers/10*3)) {
-          giveLevelBox.push(levelBox[2]);
-      } else if (i <= Math.floor(numOfUsers/10*6)) {
-          giveLevelBox.push(levelBox[1]);
-      } else {
-          giveLevelBox.push(levelBox[0]);
-      }
+    if (i <= Math.floor(numOfUsers / 10)) {
+      giveLevelBox.push(levelBox[3]);
+    } else if (i <= Math.floor(numOfUsers / 10 * 3)) {
+      giveLevelBox.push(levelBox[2]);
+    } else if (i <= Math.floor(numOfUsers / 10 * 6)) {
+      giveLevelBox.push(levelBox[1]);
+    } else {
+      giveLevelBox.push(levelBox[0]);
+    }
   }
 
   useEffect(() => {
       users.map((user) =>
-          dbService.doc(`users/${user.id}`)
-              .update({level: giveLevelBox.shift()})
+        dbService.doc(`users/${user.id}`)
+          .update({level: giveLevelBox.shift()})
       )
-  }
+    }, []
   )
 
   return (
@@ -49,13 +49,13 @@ const Ranking = () => {
         <div className="ranking_eachUser">
           <div className="ranking_userName">[User Nickname]</div>
           <div className="ranking_userPoint">[Point]</div>
-            <div className="ranking_userLevel">[Level]</div>
+          <div className="ranking_userLevel">[Level]</div>
         </div>
         {users.map((user, index) => (
           <div key={index} className="ranking_eachUser">
             <div className="ranking_userName">{user.nickname}</div>
             <div className="ranking_userPoint">{user.point}</div>
-              <div className="ranking_userLevel">{user.level}</div>
+            <div className="ranking_userLevel">{user.level}</div>
           </div>
         ))}
       </div>

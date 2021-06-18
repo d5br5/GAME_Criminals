@@ -15,6 +15,7 @@ function App() {
           .doc(user.uid)
           .get()
           .then((doc) => {
+            console.log(doc.data());
             point = doc.data().point;
           }).then(()=>{
           setUserObj({

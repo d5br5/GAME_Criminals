@@ -17,10 +17,7 @@ img {
   object-fit: cover;
 }
 
-/* .App{
-  width: 800px;
-  margin: 100px auto;
-} */
+
 
 .gameBoard{
   border : 1px solid black;
@@ -57,4 +54,6 @@ img {
 
 .body {
   background-image: url("./assets/header.jpg");
+  padding: 40px 0;
+  height:100vh;
 }

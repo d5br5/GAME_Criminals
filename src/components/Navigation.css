@@ -2,26 +2,16 @@
     background-image: url("../assets/header.jpg");
     background-size: contain;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 200px;
 }
 
-.naviContainer ul {
-    margin: 0px;
-}
-
-.naviLeftContainer {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    left: 0;
-}
-
-.naviLeftContainer .navLink {
+.naviSideContainer .navLink {
     padding: 1rem;
 }
 
 .naviContainer .logo {
-    height: 80px;
+    height: 150px;
 }
