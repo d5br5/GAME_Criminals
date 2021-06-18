@@ -12,15 +12,15 @@ code {
     monospace;
 }
 
-img{
+img {
   height: 400px;
   object-fit: cover;
 }
 
-.App{
+/* .App{
   width: 800px;
   margin: 100px auto;
-}
+} */
 
 .gameBoard{
   border : 1px solid black;
@@ -48,4 +48,8 @@ img{
 .ranking_userPoint{
   width: 30%;
   text-align: center;
+}
+
+.body {
+  background-image: url("./assets/header.jpg");
 }

@@ -1,0 +1,27 @@
+.naviContainer {
+    background-image: url("../assets/header.jpg");
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.naviContainer ul {
+    margin: 0px;
+}
+
+.naviLeftContainer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 0;
+}
+
+.naviLeftContainer .navLink {
+    padding: 1rem;
+}
+
+.naviContainer .logo {
+    height: 80px;
+}

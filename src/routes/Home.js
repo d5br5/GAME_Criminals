@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Home = ({isLoggedIn}) => {
   return (
-    <div>
+    <div className="body">
       <h1>범죄자 관상 테스트</h1>
       <h2>[Game Rule]</h2>
       <p>1. 1 게임은 10 라운드로 구성됩니다.</p>

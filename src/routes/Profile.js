@@ -11,7 +11,7 @@ const Profile = ({ userObj }) => {
   }
 
   return (
-    <div>
+    <div className="body">
       <h2>Profile</h2>
       <p>username : {userObj.nickname}</p>
       <p>point: {userObj.point}</p>

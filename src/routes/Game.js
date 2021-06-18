@@ -41,13 +41,13 @@ const Game = ({useObj, setUserObj}) => {
     criminals.length === numOfGames && (
       <div>
         <h2>Game</h2>
-        [ List of Criminals of This Game ] - 배포시 삭제
+        {/* [ List of Criminals of This Game ] - 배포시 삭제
         {criminals.map((criminal, index) => (
           <div key={index}>
             {index + 1} ----- index : {criminal.index} / name : {criminal.name}{" "}
             / crime : {criminal.crime}
           </div>
-        ))}
+        ))} */}
         <GameBoard criminals={criminals} userObj={useObj} setUserObj={setUserObj}/>
       </div>
     )
