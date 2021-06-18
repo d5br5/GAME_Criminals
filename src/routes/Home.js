@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./Home.css"
+import {Auth} from "./index";
 
 const Home = ({isLoggedIn}) => {
   return (
@@ -12,9 +13,9 @@ const Home = ({isLoggedIn}) => {
           <p className="gameRuleMargin">③ 해당 범죄자의 죄목을 예상하여 정답을 선택합니다.</p>
           <p className="gameRuleMargin">④ 10 라운드가 종료된 후, 최종 성적에 맞게 POINT를 획득합니다.</p>
           {
-            isLoggedIn && <Link to='/game'>
+            isLoggedIn ? <Link to='/game'>
               <button className="btnPlayGame">PLAY GAME</button>
-            </Link>
+            </Link> : <Auth/>
           }
       </div>
     </div>

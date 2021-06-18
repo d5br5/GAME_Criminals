@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { authService, dbService } from "../fbase";
+import React, {useState} from "react";
+import {authService, dbService} from "../fbase";
 
-function AuthForm({ authMode }) {
+function AuthForm({authMode}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
@@ -20,6 +20,8 @@ function AuthForm({ authMode }) {
             currUser.updateProfile({
               displayName: nickname,
             });
+          }).then(() => {
+            const currUser = authService.currentUser;
             dbService.collection("users").doc(currUser.uid).set({
               id: currUser.uid,
               nickname,
