@@ -39,7 +39,7 @@ const Ranking = () => {
         dbService.doc(`users/${user.id}`)
           .update({level: giveLevelBox.shift()})
       )
-    }, []
+    }, [dbService.collection("users")]
   )
 
   return (
