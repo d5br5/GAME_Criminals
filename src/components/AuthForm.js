@@ -32,6 +32,7 @@ function AuthForm({ authMode }) {
     } catch (error) {
       setError(error.message);
     }
+    window.location.reload();
   }
 
   return (
