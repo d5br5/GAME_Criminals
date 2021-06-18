@@ -112,7 +112,7 @@ const GameBoard = ({criminals, userObj, setUserObj}) => {
     </div>
   ) : (
     init ? (!gameEnd ? (
-        <div className="oneProblem">
+        <div className="gameBoard">
           <h2>[{stage+1} Round] 현재까지 정답 : {rightAnswer} /10 </h2>
           <img src={imgUrlArray[stage]} alt=""/>
           <h3>{currCriminal.name}</h3>
@@ -121,7 +121,6 @@ const GameBoard = ({criminals, userObj, setUserObj}) => {
             <button onClick={answerCheck}>{buttonOne}</button>
             <button onClick={answerCheck}>{buttonTwo}</button>
           </div>
-
         </div>
       ) : (
         <GameResult rightAnswer={rightAnswer} userObj={userObj} setUserObj={setUserObj}/>

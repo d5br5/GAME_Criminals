@@ -34,7 +34,7 @@ const Game = ({useObj, setUserObj}) => {
         setCriminals(criminalsArray);
         setInit(true);
       });
-  }, []);
+  },[]);
 
   return (
     init &&

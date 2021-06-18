@@ -16,11 +16,6 @@ const Navigation = ({userObj}) => {
 
             </li>
             <li>
-                <Link to="/game">
-                    Game Page
-                </Link>
-            </li>
-            <li>
                 <Link to="/ranking">
                     Ranking
                 </Link>

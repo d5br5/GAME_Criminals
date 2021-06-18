@@ -9,19 +9,20 @@ function App() {
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
-        let point = "60";
+        let point = 100;
         dbService
           .collection("users")
           .doc(user.uid)
           .get()
-          .then((e) => {
-            point = e.data().point;
+          .then((doc) => {
+            point = doc.data().point;
+          }).then(()=>{
+          setUserObj({
+            nickname: user.displayName,
+            uid: user.uid,
+            point,
           });
-        setUserObj({
-          nickname: user.displayName,
-          uid: user.uid,
-          point,
-        });
+        })
       } else {
         setUserObj(null);
       }

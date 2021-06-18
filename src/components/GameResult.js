@@ -25,8 +25,6 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
 
   useEffect(() => {
     const pointUpdated = parseInt(userObj.point) + parseInt(updatedPoint);
-    console.log(pointUpdated);
-    console.log(userObj.uid);
 
     async function updatePoint() {
       await dbService.doc(`users/${userObj.uid}`).update({
@@ -35,12 +33,13 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
         setUserObj({...userObj, point: pointUpdated});
       })
     }
+
     updatePoint();
 
   }, [])
 
 
-  return <div>
+  return <div className="gameBoard">
     <h2>Your Score : {rightAnswer} / 10</h2>
     <h3>point Changed!</h3>
     <p> {pastPoint} -> {userObj.point}</p>

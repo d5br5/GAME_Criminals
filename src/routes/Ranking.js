@@ -9,8 +9,6 @@ const Ranking = () => {
       .collection("users")
       .orderBy("point", "desc")
       .onSnapshot((snapshot) => {
-        console.log(snapshot);
-        console.log(snapshot.docs);
         setUsers(
           snapshot.docs.map((doc) => ({
             id: doc.id,

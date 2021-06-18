@@ -7,7 +7,7 @@ function AuthForm({ authMode }) {
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
 
-  const point = 50;
+  const point = 200;
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -25,14 +25,16 @@ function AuthForm({ authMode }) {
               nickname,
               point,
             });
-          });
+          }).then(()=>{
+            window.location.reload();
+          })
       } else if (authMode === "SignIn") {
         await authService.signInWithEmailAndPassword(email, password);
       }
     } catch (error) {
       setError(error.message);
     }
-    window.location.reload();
+
   }
 
   return (
