@@ -81,9 +81,3 @@ code {
   width: 40%;
   text-align: center;
 }
-
-.body {
-  background-image: url("./assets/header.jpg");
-  padding: 40px 0;
-  height:100vh;
-}
