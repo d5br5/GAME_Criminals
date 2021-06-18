@@ -41,7 +41,7 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
 
   return <div className="gameBoard">
     <h2>Your Score : {rightAnswer} / 10</h2>
-    <h3>point Changed!</h3>
+    <h3>Point Changed!</h3>
     <p> {pastPoint} -> {userObj.point}</p>
 
     <Link to="/">

@@ -50,6 +50,11 @@ img {
   text-align: center;
 }
 
+.ranking_userLevel{
+  width: 40%;
+  text-align: center;
+}
+
 .body {
   background-image: url("./assets/header.jpg");
 }
