@@ -22,14 +22,14 @@ code {
 
 .body {
   background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 55%, cover;
+  background-size: 45%, cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   max-width: 100vw;
 }
 
@@ -37,7 +37,7 @@ code {
 
 .gameBody {
   background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 55%, cover;
+  background-size: 45%, cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -45,7 +45,7 @@ code {
   justify-content: center;
   align-items: center;
   max-width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
 
 .gameBody h2 {

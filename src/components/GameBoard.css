@@ -2,7 +2,7 @@
 
 .gameBoard {
     background-image: url("../assets/line_blackbox.jpg"), url("../assets/background.jpg");
-    background-size: 55%, cover;
+    background-size: 45%, cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
 }
 
 .gameBoardContent {
