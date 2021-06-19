@@ -2,8 +2,8 @@ import {useState, useEffect} from "react";
 import {dbService, storageService} from "../fbase";
 import GameResult from "./GameResult";
 import GameRules from "./GameRules";
-import "./GameBoard.css";
-import "./GameRules.css";
+import "../styles/GameBoard.css";
+import "../styles/GameRules.css";
 
 const kindOfCrimes = 31;
 

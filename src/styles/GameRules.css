@@ -9,6 +9,7 @@
 .gameRule h1 {
     font-size: 3rem;
     font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
     letter-spacing: 0.2rem;
     position: relative;
     top: -20px;

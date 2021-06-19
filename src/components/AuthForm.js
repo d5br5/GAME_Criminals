@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {authService, dbService} from "../fbase";
+import Button from "@material-ui/core/Button";
 
 function AuthForm({authMode}) {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ function AuthForm({authMode}) {
   async function onSubmit(e) {
     e.preventDefault();
     try {
-      if (authMode === "SignUp") {
+      if (authMode === "signUp") {
         await authService
           .createUserWithEmailAndPassword(email, password)
           .then((res) => {
@@ -30,7 +31,7 @@ function AuthForm({authMode}) {
           }).then(()=>{
             window.location.reload();
           })
-      } else if (authMode === "SignIn") {
+      } else if (authMode === "signIn") {
         await authService.signInWithEmailAndPassword(email, password);
       }
     } catch (error) {
@@ -40,7 +41,8 @@ function AuthForm({authMode}) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <>
+    <form onSubmit={onSubmit} className="authForm">
       <input
         name="email"
         type="email"
@@ -57,23 +59,27 @@ function AuthForm({authMode}) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      {authMode === "SignUp" && (
+      {authMode === "signUp" && (
         <input
           type="text"
           name="nickname"
           required
-          placeholder="nickname"
+          placeholder="Nickname"
           value={nickname}
           onChange={(e) => setNickname(e.target.value)}
         />
       )}
 
-      <input
+      <Button
+        variant="contained"
+        color="primary"
+        style={{height:"40px"}}
         type="submit"
-        value={authMode === "SignUp" ? "Create Account" : "Sign In"}
-      />
-      {error && <span>{error}</span>}
+      >{authMode === "signUp" ? "Create Account" : "Sign In"}</Button>
+
     </form>
+  {error && <span className="loginError">{error}</span>}
+    </>
   );
 }
 

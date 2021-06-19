@@ -1,6 +1,11 @@
 import React, {useState} from "react";
 import authService, {dbService, firebaseInstance} from "../fbase";
 import AuthForm from "../components/AuthForm";
+import Button from "@material-ui/core/Button";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGoogle} from "@fortawesome/free-brands-svg-icons";
+
+import '../styles/Auth.css';
 
 const Auth = () => {
 
@@ -26,24 +31,35 @@ const Auth = () => {
   }
 
   return (
-    <div>
-      <button onClick={() => {
-        setAuthMode('SignIn');
-        setProcessing(true)
-      }}>Sign In
-      </button>
-      <button onClick={() => {
-        setAuthMode('SignUp');
-        setProcessing(true)
-      }}>Sign Up
-      </button>
-      {
-        processing && <AuthForm authMode={authMode}/>
-      }
-      <div>
-        <button onClick={onSocialClick} name="google">Continue with Google</button>
+    <>
+      <AuthForm authMode={authMode}/>
+      <div className="authSelector">
+        {
+          authMode === 'signIn' ? (
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => {
+                setAuthMode('signUp');
+                setProcessing(true)
+              }}>회원가입
+            </Button>
+          ) : (
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => {
+                setAuthMode('signIn');
+                setProcessing(true)
+              }}>로그인으로 돌아가기
+            </Button>
+          )}
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={onSocialClick} name="google">Google 계정으로 로그인 &nbsp; <FontAwesomeIcon icon={faGoogle}/></Button>
       </div>
-    </div>
+    </>
   );
 };
 

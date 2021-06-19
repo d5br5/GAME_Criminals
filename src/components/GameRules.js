@@ -1,7 +1,8 @@
 const GameRules = ({mode})=>{
 
   return  <div className="gameRule">
-    <h1>GAME {mode} RULE</h1>
+    {mode==="1" ?  <h1 style={{fontSize:"60px"}}>죄목 추측</h1>: <h1 style={{fontSize:"60px"}}>형량 대결</h1> }
+    <h1>GAME RULE</h1>
     {
       mode === "1" ? <>
         <p className="gameRuleMargin">① 1 게임은 10 라운드로 구성됩니다.</p>

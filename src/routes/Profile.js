@@ -1,7 +1,7 @@
 import React from "react";
 import { authService } from "../fbase";
 import { useHistory } from "react-router-dom";
-import "./Profile.css"
+import "../styles/Profile.css"
 
 const Profile = ({ userObj }) => {
   const history = useHistory();

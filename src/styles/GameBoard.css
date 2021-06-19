@@ -109,10 +109,11 @@
     margin-top: 30px;
     color: #000000;
     border: #000000 solid 1.5px;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 10px;
     background-color: #ffffff;
     font-size: 1.2rem;
+    transition-duration: 0.1s;
 }
 
 .btnRight {
@@ -124,10 +125,17 @@
     margin-top: 30px;
     color: #000000;
     border: #000000 solid 1.5px;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 10px;
     background-color: #ffffff;
     font-size: 1.2rem;
+    transition-duration: 0.1s;
+}
+
+.btnLeft:hover, .btnRight:hover{
+    border-color: white;
+    background-color: #1b1b1b;
+    color:white;
 }
 
 /*Game1 Result*/
@@ -163,6 +171,7 @@
     background-color: #ffffff;
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
+    transition-duration: 0.2s;
 }
 
 .btnGoHome:hover {
