@@ -17,6 +17,7 @@ const Profile = ({ userObj }) => {
         <h1>PROFILE</h1>
         <p>닉네임 : {userObj.nickname}</p>
         <p>포인트 : {userObj.point}</p>
+        <p>레벨 : {userObj.level}</p>
 
         <button className="btnLogOut" onClick={onLogOutClick}>LOG OUT</button>
       </div>

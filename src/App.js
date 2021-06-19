@@ -10,18 +10,20 @@ function App() {
     authService.onAuthStateChanged((user) => {
       if (user) {
         let point = 100;
+        let level = '';
         dbService
           .collection("users")
           .doc(user.uid)
           .get()
           .then((doc) => {
-            console.log(doc.data());
             point = doc.data().point;
+            level = doc.data().level;
           }).then(()=>{
           setUserObj({
             nickname: user.displayName,
             uid: user.uid,
             point,
+            level,
           });
         })
       } else {
