@@ -1,7 +1,9 @@
 import {useState, useEffect} from "react";
 import {dbService, storageService} from "../fbase";
 import GameResult from "./GameResult";
-import "./GameBoard.css"
+import GameRules from "./GameRules";
+import "./GameBoard1.css";
+import "./GameRules.css";
 
 const kindOfCrimes = 31;
 
@@ -41,7 +43,7 @@ async function fetchImgs(criminals) {
   return imgUrls;
 }
 
-const GameBoard = ({criminals, userObj, setUserObj}) => {
+const GameBoard1 = ({criminals, userObj, setUserObj}) => {
   const [stage, setStage] = useState(0);
   const [imgUrlArray, setImageUrlArray] = useState("");
   const [init, setInit] = useState(false);
@@ -106,6 +108,7 @@ const GameBoard = ({criminals, userObj, setUserObj}) => {
 
   return !gameStart ? (
     <div>
+      <GameRules mode="1"/>
       <button onClick={() => {
         setGameStart(true)
       }}>Game Start!
@@ -136,4 +139,4 @@ const GameBoard = ({criminals, userObj, setUserObj}) => {
     ))
 };
 
-export default GameBoard;
+export default GameBoard1;
