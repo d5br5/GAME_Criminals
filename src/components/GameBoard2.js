@@ -120,9 +120,9 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
   }
 
   return !gameStart ? (
-    <div>
+    <div className="gameStartContainer">
       <GameRules mode="2"/>
-      <button onClick={() => {
+      <button className="btnPlayGame" onClick={() => {
         setGameStart(true)
       }}>Game Start!
       </button>
