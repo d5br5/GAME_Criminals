@@ -19,7 +19,29 @@
 .btnPlayGame:hover {
     cursor: pointer;
     color: #ffffff;
-    border:#ffffff solid 1.5px;
+    border: #ffffff solid 1.5px;
     border-radius: 10px;
     background-color: #1b1b1b;
+}
+
+.mainPage {
+    display: flex;
+    width: 1000px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mainGameIntro {
+    display: flex;
+    padding: 30px 50px;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.mainGameIntro:hover {
+    background-color: white;
+    color: black;
 }

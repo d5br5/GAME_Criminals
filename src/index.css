@@ -7,8 +7,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
+a{
+  text-decoration: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -22,7 +26,7 @@ code {
 
 .body {
   background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 45%, cover;
+  background-size: 1000px, cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -37,7 +41,7 @@ code {
 
 .gameBody {
   background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 45%, cover;
+  background-size: 1000px, cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
