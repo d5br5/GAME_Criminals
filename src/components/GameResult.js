@@ -41,7 +41,7 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
 
   return    <div className="gameResult">
       <h1>GAME RESULT</h1>
-      <h2>점수 : {rightAnswer} / 10</h2>
+      <h2>점수 : {rightAnswer*10}점 </h2>
       <h2>포인트 변화 : {pastPoint} ➞ {userObj.point}</h2>
       <h2>현재 레벨 : {userObj.level}</h2>
 

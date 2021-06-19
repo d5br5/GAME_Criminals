@@ -2,43 +2,23 @@ import {useState, useEffect} from "react";
 import {dbService, storageService} from "../fbase";
 import GameResult from "./GameResult";
 import GameRules from "./GameRules";
-import "./GameBoard1.css";
+import "./GameBoard.css";
 import "./GameRules.css";
 
 const kindOfCrimes = 31;
 
 async function fetchImgs(criminals) {
   const imgUrls = await Promise.all([
-    storageService
-      .ref(`criminalsImg/${criminals[0].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[1].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[2].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[3].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[4].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[5].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[6].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[7].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[8].index}.jpg`)
-      .getDownloadURL(),
-    storageService
-      .ref(`criminalsImg/${criminals[9].index}.jpg`)
-      .getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[0].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[1].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[2].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[3].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[4].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[5].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[6].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[7].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[8].index}.jpg`).getDownloadURL(),
+    storageService.ref(`criminalsImg/${criminals[9].index}.jpg`).getDownloadURL(),
   ]);
   return imgUrls;
 }
@@ -67,8 +47,8 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
       });
 
     fetchImgs(criminals).then((e) => {
-      setInit(true);
       setImageUrlArray(e);
+      setInit(true);
     });
   }, []);
 
@@ -97,10 +77,9 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
         setRightAnswer(rightAnswer + 1);
       }
 
-      if (stage < criminals.length - 1) {
-        setStage(stage + 1);
-      }
-      if (stage === criminals.length - 1) {
+      if(stage<criminals.length-1){
+        setStage(stage+1);
+      }else if (stage ===criminals.length-1){
         setGameEnd(true);
       }
     }
@@ -119,7 +98,7 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
         <div className="gameBoard">
           <div className="gameBoardContent">
             <h1>{stage+1} ROUND</h1> 
-            <h2>맞춘개수 : {rightAnswer} /10 </h2>
+            <h2>맞힌 개수 : {rightAnswer} / 10 </h2>
               <div className="img-wrapper">
                 <img src={imgUrlArray[stage]} alt=""/>
               </div>

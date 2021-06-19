@@ -37,10 +37,10 @@ function AppRouter({isLoggedIn, userObj, setUserObj}) {
             <Profile userObj={userObj}/>
           </Route>
           <Route exact path="/game1" replace>
-            <Game1 useObj={userObj} setUserObj={setUserObj}/>
+            <Game1 userObj={userObj} setUserObj={setUserObj}/>
           </Route>
           <Route exact path="/game2" replace>
-            <Game2 useObj={userObj} setUserObj={setUserObj}/>
+            <Game2 userObj={userObj} setUserObj={setUserObj}/>
           </Route>
           <Route exact path="/ranking" replace>
             <Ranking/>
