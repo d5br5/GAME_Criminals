@@ -137,14 +137,14 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
                 <h1>{stage + 1} ROUND</h1>
                 <h2>맞힌 개수 : {rightAnswer} / 5</h2>
                 <div className="twoCriminalsWrapper">
-                  <div className="criminalWrapper" onClick={answerCheck1}>
+                  <div className="criminalWrapper">
                     <img src={imgUrlArray[stage * 2]} alt=""/>
-                    <h3>{currCriminals[0].name}</h3>
+                    <button className = "btnCriminals" onClick={answerCheck1}>{currCriminals[0].name}</button>
                   </div>
                   <span style={{width:"40px"}}></span>
-                  <div className="criminalWrapper" onClick={answerCheck2}>
+                  <div className="criminalWrapper">
                     <img src={imgUrlArray[stage * 2 + 1]} alt=""/>
-                    <h3>{currCriminals[1].name}</h3>
+                    <button className = "btnCriminals" onClick={answerCheck2}>{currCriminals[1].name}</button>
                   </div>
                 </div>
               </div>

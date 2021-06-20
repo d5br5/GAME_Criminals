@@ -140,6 +140,29 @@
 
 }
 
+.btnCriminals {
+    width: 260px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnCriminals:hover {
+    cursor: pointer;
+    color: #ffffff;
+    border: #ffffff solid 1.5px;
+    border-radius: 10px;
+    background-color: #1b1b1b;
+}
+
 .criminalWrapper h3{
     background-color: rgb(26, 26, 26);
     width: 100%;
@@ -149,6 +172,14 @@
     box-sizing: border-box;
 }
 
+/*.btn button.result p {
+    /* 폰트 컬러 변경 
+}
+
+.btn button.notResult p {
+
+}*/
+
 .btn {
     width: 70%;
     padding: 15px;
@@ -157,14 +188,6 @@
     align-items: stretch;
     margin: 0 auto;
 }
-
-/*.btn button.result p {
-    /* 폰트 컬러 변경 
-}
-
-.btn button.notResult p {
-
-}*/
 
 .btn button.result i {
     background-image:url(./../assets/icon_o.svg) !important;
