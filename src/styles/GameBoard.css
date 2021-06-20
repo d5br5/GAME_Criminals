@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@800&display=swap');
 
-.btnGameStart {
+.gameStartContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnPlayGame {
     font-family: 'Black Han Sans', sans-serif;
     width: 200px;
     height: 50px;
@@ -17,7 +24,7 @@
     letter-spacing: 0.1rem;
 }
 
-.btnGameStart:hover {
+.btnPlayGame:hover {
     cursor: pointer;
     color: #ffffff;
     border:#ffffff solid 1.5px;
@@ -105,6 +112,43 @@
     box-sizing: border-box;
 }
 
+/*game board 2*/
+
+.twoCriminalsWrapper{
+    position:relative;
+    top: 23px;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.criminalWrapper{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.criminalWrapper img{
+    width: 100%;
+    margin: auto;
+    display: block;
+
+}
+
+.criminalWrapper h3{
+    background-color: rgb(26, 26, 26);
+    width: 100%;
+    border: 0.5px solid #fff;
+    text-align: center;
+    line-height: 2.5rem;
+    box-sizing: border-box;
+}
+
 .btn {
     width: 70%;
     padding: 15px;
@@ -114,13 +158,13 @@
     margin: 0 auto;
 }
 
-.btn button.result p {
-    /* 폰트 컬러 변경 */
+/*.btn button.result p {
+    /* 폰트 컬러 변경 
 }
 
 .btn button.notResult p {
 
-}
+}*/
 
 .btn button.result i {
     background-image:url(./../assets/icon_o.svg) !important;
@@ -190,69 +234,4 @@
     background-color: #ffffff;
     font-size: 1.2rem;
     cursor: pointer;
-}
-
-/*Game Result*/
-
-.gameResult {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.gameResult h1 {
-    position: relative;
-    top: -80px;
-    font-family: 'Black Han Sans', sans-serif;
-    letter-spacing: 0.1rem;
-}
-
-.gameResultTable {
-    font-size: 1.3rem;
-    text-align: center;
-    width: 500px;
-    border-collapse: collapse;
-    position: relative;
-    top: -3rem;
-}
-
-.gameResultTable tr {
-    border-bottom: 1px solid white;
-}
-
-.gameResultTable td {
-    width: 100px;
-    padding: 30px;
-}
-
-.gameResultData {
-    font-family: 'Gothic A1', sans-serif;
-    letter-spacing: 0.1rem;
-}
-
-.btnGoHome {
-    font-family: 'Black Han Sans', sans-serif;
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    box-sizing: border-box;
-    position: relative;
-    margin-top: 50px;
-    color: #000000;
-    border: #000000 solid 1.5px;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    font-size: 1.2rem;
-    letter-spacing: 0.1rem;
-}
-
-.btnGoHome:hover {
-    cursor: pointer;
-    color: #ffffff;
-    border:#ffffff solid 1.5px;
-    border-radius: 10px;
-    background-color: #1b1b1b;
 }

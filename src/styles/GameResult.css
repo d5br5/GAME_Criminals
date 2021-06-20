@@ -1,4 +1,4 @@
-.gameRule {
+.gameResult {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,29 +6,44 @@
     color: white;
 }
 
-.gameRule h1 {
-    font-family: 'Black Han Sans', sans-serif;
-    letter-spacing: 0.2rem;
-    text-shadow: 0px 5px 5px black;
+.gameResult h1 {
     position: relative;
-    top: -20px;
-    margin: 0px;
-  }
-
-.gameRuleMargin {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 30px;
+    top: -80px;
+    font-family: 'Black Han Sans', sans-serif;
+    letter-spacing: 0.1rem;
 }
 
-.btnPlayGame {
+.gameResultTable {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 500px;
+    border-collapse: collapse;
+    position: relative;
+    top: -3rem;
+}
+
+.gameResultTable tr {
+    border-bottom: 1px solid white;
+}
+
+.gameResultTable td {
+    width: 100px;
+    padding: 30px;
+}
+
+.gameResultData {
+    font-family: 'Gothic A1', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.btnGoHome {
     font-family: 'Black Han Sans', sans-serif;
     width: 200px;
     height: 50px;
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    margin-top: 30px;
+    margin-top: 50px;
     color: #000000;
     border: #000000 solid 1.5px;
     border-radius: 10px;
@@ -36,10 +51,10 @@
     background-color: #ffffff;
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
+    transition-duration: 0.2s;
 }
 
-
-.btnPlayGame:hover {
+.btnGoHome:hover {
     cursor: pointer;
     color: #ffffff;
     border:#ffffff solid 1.5px;

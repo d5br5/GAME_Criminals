@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import {dbService} from "../fbase";
-import "./Ranking.css";
+import "../styles/Ranking.css";
 
 const Ranking = () => {
   const [users, setUsers] = useState([]);
@@ -48,7 +48,7 @@ const Ranking = () => {
       <div className="rankingContent">
         <h1 className="rankingTitle">Ranking</h1>
         <table className="ranking_table">
-          <thead className="ranking_eachUser">
+          <thead>
             <tr>
             <th className="ranking_number">순위</th>
             <th className="ranking_userName">닉네임</th>

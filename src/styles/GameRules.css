@@ -1,0 +1,23 @@
+.gameRule {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.gameRule h1 {
+    font-size: 3rem;
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    position: relative;
+    top: -20px;
+    margin: 0px;
+}
+
+.gameRuleMargin {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 30px;
+}

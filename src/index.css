@@ -23,7 +23,7 @@ code {
 
 .body {
   background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 750px 660px, cover;
+  background-size: 900px 760px, cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -53,16 +53,4 @@ code {
 
 .gameBody h2 {
   color: white;
-}
-
-.ranking_table{
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-
-.ranking_eachUser{
-  display: flex;
-  flex-direction: row;
-  margin: 5px 0;
 }

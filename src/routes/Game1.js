@@ -1,24 +1,9 @@
 import { useState, useEffect } from "react";
 import { dbService } from "../fbase";
-import GameBoard from "../components/GameBoard";
+import GameBoard1 from "../components/GameBoard1";
+import {getRandomNumbers} from "../components/Functions";
 
-function getRandomNumbers(total, size) {
-  let result = [];
-  for (let i = 0; i < size; i++) {
-    let randNum = Math.ceil(Math.random() * total);
-    if (result.includes(randNum)) {
-      i--;
-    } else {
-      result.push(randNum);
-    }
-  }
-  for (let i = 0; i < size; i++) {
-    result[i] = result[i].toString();
-  }
-  return result;
-}
-
-const Game = ({useObj, setUserObj}) => {
+const Game1 = ({userObj, setUserObj}) => {
   const numOfGames = 10;
   const numOfCriminals = 100;
   const problems = getRandomNumbers(numOfCriminals, numOfGames);
@@ -39,18 +24,18 @@ const Game = ({useObj, setUserObj}) => {
   return (
     init &&
     criminals.length === numOfGames && (
-      <div className="gameBody">
-        {/* [ List of Criminals of This Game ] - 배포시 삭제
+      <div className="body">
+        {/* [ List of Criminals of This Game1 ] - 배포시 삭제
         {criminals.map((criminal, index) => (
           <div key={index}>
             {index + 1} ----- index : {criminal.index} / name : {criminal.name}{" "}
             / crime : {criminal.crime}
           </div>
         ))} */}
-        <GameBoard criminals={criminals} userObj={useObj} setUserObj={setUserObj}/>
+        <GameBoard1 criminals={criminals} userObj={userObj} setUserObj={setUserObj}/>
       </div>
     )
   );
 };
 
-export default Game;
+export default Game1;

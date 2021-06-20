@@ -1,23 +1,37 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "./Home.css"
+import "../styles/Home.css"
 import {Auth} from "./index";
+import Welcome from "../components/Welcome";
 
 const Home = ({isLoggedIn}) => {
   return (
     <div className="body">
-      <div className="gameRule">
-        <h1>GAME RULE</h1>
-          <p className="gameRuleMargin">1.  1 게임은 10 라운드로 구성됩니다.</p>
-          <p className="gameRuleMargin">2.  각 라운드마다 범죄자의 사진과 이름을 확인할 수 있습니다.</p>
-          <p className="gameRuleMargin">3.  해당 범죄자의 죄목을 예상하여 정답을 선택합니다.</p>
-          <p className="gameRuleMargin">4.  10 라운드가 종료된 후, 최종 성적에 맞게 POINT를 획득합니다.</p>
-          {
-            isLoggedIn ? <Link to='/game'>
-              <button className="btnPlayGame">Play Game</button>
-            </Link> : <Auth/>
-          }
-      </div>
+      {
+        isLoggedIn ? <div className='mainPage'>
+          <Link to='/game1'>
+            <div className="mainGameIntro">
+              <h1>Game 1</h1>
+              <h2> 범죄자 죄목 추측</h2>
+              <p>이 범죄자의 실제 죄목은?</p>
+              <p>[ 10라운드 ]</p>
+            </div>
+          </Link>
+          <span style={{width:"30px"}}></span>
+          <Link to='/game2'>
+            <div className="mainGameIntro">
+              <h1>Game 2</h1>
+              <h2> 범죄자 형량 대결</h2>
+              <p>두 사람 중 형량이 더 센 사람은?</p>
+              <p>[ 5라운드 ]</p>
+            </div>
+          </Link>
+
+        </div> : <>
+          <Welcome/>
+          <Auth/>
+          </>
+      }
     </div>
   );
 };

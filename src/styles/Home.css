@@ -1,0 +1,52 @@
+.btnPlayGame {
+    font-family: 'Black Han Sans', sans-serif;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    margin: 30px auto 0px auto;
+    transition-duration: 0.2s;
+}
+
+
+.btnPlayGame:hover {
+    cursor: pointer;
+    color: #ffffff;
+    border: #ffffff solid 1.5px;
+    border-radius: 10px;
+    background-color: #1b1b1b;
+}
+
+.mainPage {
+    display: flex;
+    width: 1000px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mainGameIntro {
+    font-family: 'Gothic A1', sans-serif;
+    display: flex;
+    padding: 20px 30px;
+    flex-direction: column;
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+    width: 330px;
+    text-decoration: none;
+}
+
+.mainGameIntro:hover {
+    background-color: white;
+    color: black;
+}

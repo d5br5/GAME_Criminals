@@ -1,0 +1,47 @@
+.welcome {
+    color: white;
+    text-align: center;
+}
+
+.welcome h1{
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
+    font-size: 4rem;
+}
+
+.welcome h2{
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
+    font-size: 2.3rem;
+}
+
+.authSelector{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.authForm{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.authForm input{
+    height: 30px;
+    font-size: 1rem;
+}
+
+.authSelector button{
+    width: 250px;
+    height: 40px;
+}
+
+.loginError{
+    margin-top: 20px;
+    width: 1000px;
+    text-align: center;
+    color: orangered;
+}

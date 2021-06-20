@@ -6,7 +6,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import Navigation from "./Navigation";
-import {Auth, Home, Profile, Game, Ranking} from "../routes";
+
+import {Home, Profile, Game1, Game2, Ranking} from "../routes";
 
 function AppRouter({isLoggedIn, userObj, setUserObj}) {
   if (!isLoggedIn) {
@@ -35,8 +36,11 @@ function AppRouter({isLoggedIn, userObj, setUserObj}) {
           <Route exact path="/profile" replace>
             <Profile userObj={userObj}/>
           </Route>
-          <Route exact path="/game" replace>
-            <Game useObj={userObj} setUserObj={setUserObj}/>
+          <Route exact path="/game1" replace>
+            <Game1 userObj={userObj} setUserObj={setUserObj}/>
+          </Route>
+          <Route exact path="/game2" replace>
+            <Game2 userObj={userObj} setUserObj={setUserObj}/>
           </Route>
           <Route exact path="/ranking" replace>
             <Ranking/>
