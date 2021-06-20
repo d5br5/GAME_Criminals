@@ -12,12 +12,14 @@ const Profile = ({ userObj }) => {
   }
 
   return (
-    <div className="bodyProfile">
+    <div className="body">
       <div className="profileContent">
-        <h1>PROFILE</h1>
-        <p>닉네임 : {userObj.nickname}</p>
-        <p>포인트 : {userObj.point}</p>
-
+        <h1>Profile</h1>
+        <table className="profileTable">
+          <tr><td>닉네임 :</td><td className="profileData">{userObj.nickname}</td></tr>
+          <tr><td>포인트 :</td><td className="profileData">{userObj.point}</td></tr>
+          <tr><td>레벨 :</td><td className="profileData">{userObj.level}</td></tr>
+        </table>
         <button className="btnLogOut" onClick={onLogOutClick}>LOG OUT</button>
       </div>
     </div>

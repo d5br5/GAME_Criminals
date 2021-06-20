@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {dbService} from "../fbase";
+import "./Ranking.css";
 
 const Ranking = () => {
   const [users, setUsers] = useState([]);
@@ -43,23 +44,33 @@ const Ranking = () => {
   )
 
   return (
-    <>
-      <h2>Ranking</h2>
-      <div className="ranking_table">
-        <div className="ranking_eachUser">
-          <div className="ranking_userName">[User Nickname]</div>
-          <div className="ranking_userPoint">[Point]</div>
-          <div className="ranking_userLevel">[Level]</div>
-        </div>
-        {users.map((user, index) => (
-          <div key={index} className="ranking_eachUser">
-            <div className="ranking_userName">{user.nickname}</div>
-            <div className="ranking_userPoint">{user.point}</div>
-            <div className="ranking_userLevel">{user.level}</div>
-          </div>
-        ))}
+    <div className="rankingBody">
+      <div className="rankingContent">
+        <h1 className="rankingTitle">Ranking</h1>
+        <table className="ranking_table">
+          <thead className="ranking_eachUser">
+            <tr>
+            <th className="ranking_number">순위</th>
+            <th className="ranking_userName">닉네임</th>
+            <th className="ranking_userPoint">포인트</th>
+            <th className="ranking_userLevel">레벨</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {users.map((user, index) => (
+                <div key={index} className="ranking_eachUser">
+                  <td className="ranking_number">{index+1}</td>
+                  <td className="ranking_userName">{user.nickname}</td>
+                  <td className="ranking_userPoint">{user.point}</td>
+                  <td className="ranking_userLevel">{user.level}</td>
+                </div>
+              ))}
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </>
+    </div>
   );
 };
 

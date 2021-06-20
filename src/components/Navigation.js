@@ -8,13 +8,13 @@ const Navigation = ({userObj, isLoggedIn}) => {
     <div className="naviLeftContainer">
         {
           isLoggedIn && 
-            <Link className="navLink" to='/profile'>
+            <Link className="navLink1" to='/profile'>
               Profile
             </Link>
         }
         {
           isLoggedIn && 
-            <Link className="navLink" to="/ranking">
+            <Link className="navLink2" to="/ranking">
               Ranking
             </Link>
         }

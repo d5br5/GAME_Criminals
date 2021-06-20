@@ -105,26 +105,29 @@ const GameBoard = ({criminals, userObj, setUserObj}) => {
   };
 
   return !gameStart ? (
-    <div>
-      <button onClick={() => {
+    <div className="body">
+      <button className="btnGameStart" onClick={() => {
         setGameStart(true)
-      }}>Game Start!
+      }}>Game Start
       </button>
     </div>
   ) : (
     init ? (!gameEnd ? (
         <div className="gameBoard">
           <div className="gameBoardContent">
-            <h1>{stage+1} ROUND</h1> 
-            <h2>맞춘개수 : {rightAnswer} /10 </h2>
+            <div className="gameBoardContentHeader">
+              <h1>{stage+1} ROUND</h1> 
+              <h2>맞은개수 : {rightAnswer} /10 </h2>
+            </div>
+            <div className="criminalInfo">
               <div className="img-wrapper">
                 <img src={imgUrlArray[stage]} alt=""/>
               </div>
-            <h3>{currCriminal.name}</h3>
-
+              <h3>{currCriminal.name}</h3>
+            </div>
             <div className="btn">
-              <button className="btnLeft" onClick={answerCheck}>{buttonOne}</button>
-              <button className="btnRight" onClick={answerCheck}>{buttonTwo}</button>
+              <button className="btnLeft" onClick={answerCheck}><i></i><p>{buttonOne}</p></button>
+              <button className="btnRight" onClick={answerCheck}><i></i><p>{buttonTwo}</p></button>
             </div>
           </div>
         </div>

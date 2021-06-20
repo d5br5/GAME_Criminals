@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import authService, {dbService, firebaseInstance} from "../fbase";
 import AuthForm from "../components/AuthForm";
+import "./Auth.css";
 
 const Auth = () => {
 
@@ -26,13 +27,13 @@ const Auth = () => {
   }
 
   return (
-    <div>
-      <button onClick={() => {
+    <div className="sign">
+      <button className="btnSignIn" onClick={() => {
         setAuthMode('SignIn');
         setProcessing(true)
       }}>Sign In
       </button>
-      <button onClick={() => {
+      <button className="btnSignUp" onClick={() => {
         setAuthMode('SignUp');
         setProcessing(true)
       }}>Sign Up
@@ -41,7 +42,7 @@ const Auth = () => {
         processing && <AuthForm authMode={authMode}/>
       }
       <div>
-        <button onClick={onSocialClick} name="google">Continue with Google</button>
+        <button className="btnGoogle" onClick={onSocialClick} name="google">Continue with Google</button>
       </div>
     </div>
   );

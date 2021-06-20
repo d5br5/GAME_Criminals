@@ -1,0 +1,88 @@
+.rankingBody {
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+}
+
+.rankingContent {
+    position: absolute;
+    top: 200px;
+    width: 600px;
+    height: auto;
+    background-image: url(./../assets/no_radius_blackbox.jpg);
+    background-repeat: repeat-y;
+    background-size: 600px auto;
+    color: white;
+    padding:30px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.rankingTitle {
+    font-family: 'Black Han Sans', sans-serif;
+    letter-spacing: 0.1rem;
+    color:white;
+}
+
+.ranking_table {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.ranking_table thead tr {
+    width: 500px;
+    border-bottom: 2px solid white;
+}
+
+.ranking_table th {
+    text-align: left;
+    padding: 5px 15px 5px 15px;
+}
+
+.ranking_table th:nth-child(1) {
+    padding-left: 18px;
+    width: 72px;
+}
+
+.ranking_table th:nth-child(2) {
+    width: 132px;
+}
+
+.ranking_table th:nth-child(3) {
+    width: 95px;
+}
+
+.ranking_eachUser td {
+    border-bottom: 1px solid white;
+    padding: 20px 25px 20px 25px;
+}
+
+.ranking_eachUser td:nth-child(1) {
+    width: 50px;
+}
+
+.ranking_eachUser td:nth-child(2) {
+    width: 120px;
+}
+
+.ranking_eachUser td:nth-child(3) {
+    width: 70px;
+}
+
+.ranking_eachUser td:nth-child(4) {
+    width: 55px;
+}

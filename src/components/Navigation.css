@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@800&display=swap');
+
 .naviContainer {
     background-image: url("../assets/header.jpg");
     background-size: contain;
@@ -9,12 +11,48 @@
 }
 
 .naviLeftContainer {
-    display: flex;
-    justify-content: space-between;
-    max-width: 300px;
-    position: fixed;
+    width: 180px;
+    position: absolute;
     left: 5rem;
 }
+
+.navLink1 {
+    color: rgb(31, 31, 31);
+    font-family: 'Black Han Sans', sans-serif;
+    float: left;
+    text-decoration: none;
+    line-height: 25px;
+}
+
+.navLink1:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px rgb(19, 19, 19);
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out; 
+ }
+ .navLink1:hover:after {
+    transform: scaleX(1);
+ }
+
+.navLink2 {
+    color: rgb(31, 31, 31);
+    font-family: 'Black Han Sans', sans-serif;
+    float:right;
+    text-decoration: none;
+    line-height: 25px;
+}
+
+.navLink2:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px rgb(19, 19, 19);
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out; 
+ }
+ .navLink2:hover:after {
+    transform: scaleX(1);
+ }
 
 .logo {
     height: 80px;

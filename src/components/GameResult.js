@@ -42,9 +42,10 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
   return <div className="body">
     <div className="gameResult">
       <h1>GAME RESULT</h1>
-      <h2>점수 : {rightAnswer} / 10</h2>
-      <h2>포인트 변화 : {pastPoint} ➞ {userObj.point}</h2>
-
+      <table className="gameResultTable">
+      <tr><td>점수 :</td><td className="gameResultData">{rightAnswer} / 10</td></tr>
+      <tr><td>포인트 변화 :</td><td className="gameResultData">{pastPoint} ➞ {userObj.point}</td></tr>
+      </table>
       <Link to="/">
         <button className="btnGoHome">GO HOME</button>
       </Link>

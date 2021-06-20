@@ -23,7 +23,7 @@ code {
 
 .body {
   background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 55%, cover;
+  background-size: 750px 660px, cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -38,8 +38,8 @@ code {
 /*game 배경*/
 
 .gameBody {
-  background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 55%, cover;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -65,19 +65,4 @@ code {
   display: flex;
   flex-direction: row;
   margin: 5px 0;
-}
-
-.ranking_userName{
-  width : 70%;
-  text-align: left;
-}
-
-.ranking_userPoint{
-  width: 30%;
-  text-align: center;
-}
-
-.ranking_userLevel{
-  width: 40%;
-  text-align: center;
 }
