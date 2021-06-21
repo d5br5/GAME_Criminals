@@ -7,12 +7,22 @@
 }
 
 .gameRule h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-family: 'Black Han Sans', sans-serif;
     font-weight: normal;
     letter-spacing: 0.2rem;
     position: relative;
-    top: 8px;
+    top: -15px;
+    margin: 0px;
+}
+
+.gameRule h2 {
+    font-size: 2.3rem;
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    position: relative;
+    top: -15px;
     margin: 0px;
 }
 
