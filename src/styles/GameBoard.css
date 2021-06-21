@@ -153,6 +153,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    transition-duration: 0.1s;
 }
 
 .btnCriminals:hover {
@@ -242,6 +243,7 @@
     background-color: #ffffff;
     font-size: 1.2rem;
     cursor: pointer;
+    transition-duration: 0.1s;
 }
 
 .btnRight {
@@ -257,4 +259,11 @@
     background-color: #ffffff;
     font-size: 1.2rem;
     cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.btnLeft:hover, .btnRight:hover {
+    border-color: white;
+    background-color: black;
+    color : white;
 }

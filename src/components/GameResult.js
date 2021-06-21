@@ -36,7 +36,7 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
     }
 
     updatePoint();
-
+// eslint-disable-next-line
   }, [])
 
 

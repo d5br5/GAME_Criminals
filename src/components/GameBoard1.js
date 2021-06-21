@@ -50,6 +50,7 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
       setImageUrlArray(e);
       setInit(true);
     });
+    // eslint-disable-next-line
   }, []);
 
   const filteredCrimes = crimeList.filter(
