@@ -44,6 +44,8 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
     <div className="gameResult">
       <h1>GAME RESULT</h1>
       <table className="gameResultTable">
+        <thead></thead>
+        <tbody>
         <tr>
           <td>점수 :</td>
           <td className="gameResultData">{rightAnswer * 10}점</td>
@@ -56,6 +58,7 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
           <td>현재 레벨 :</td>
           <td className="gameResultData">{userObj.level}</td>
         </tr>
+        </tbody>
       </table>
       <Link to="/">
         <button className="btnGoHome">GO HOME</button>
