@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
-        let point = 0;
+        let point = 50;
         let level = "LV.1";
         dbService
           .collection("users")
