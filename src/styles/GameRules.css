@@ -12,12 +12,12 @@
     font-weight: normal;
     letter-spacing: 0.2rem;
     position: relative;
-    top: -20px;
+    top: 8px;
     margin: 0px;
 }
 
 .gameRuleMargin {
     font-size: 1.3rem;
     font-weight: bold;
-    margin: 30px;
+    margin: 12px;
 }

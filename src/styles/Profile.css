@@ -1,61 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@800&display=swap");
 
 .profileContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 600px;
 }
 
 .profileContent h1 {
-    position: relative;
-    top: -80px;
-    font-family: 'Black Han Sans', sans-serif;
-    letter-spacing: 0.1rem;
+  position: relative;
+  top: -32px;
+  font-family: "Black Han Sans", sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 .profileTable {
-    font-size: 1.2rem;
-    border-collapse: collapse;
-    position: relative;
-    top: -3rem;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+  position: relative;
+  top: -3rem;
 }
 
 .profileTable tr {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .profileTable td {
-    width: 100px;
-    padding: 20px;
+  min-width: 100px;
+  padding: 20px;
 }
 
 .profileData {
-    font-family: 'Gothic A1', sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .btnLogOut {
-    font-family: 'Black Han Sans', sans-serif;
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    box-sizing: border-box;
-    margin-top: 50px;
-    color: #000000;
-    border: #000000 solid 1.5px;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    font-size: 1.2rem;
-    letter-spacing: 0.1rem;
+  font-family: "Black Han Sans", sans-serif;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 50px;
+  color: #000000;
+  border: #000000 solid 1.5px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
 }
 
 .btnLogOut:hover {
-    cursor: pointer;
-    color: #ffffff;
-    border:#ffffff solid 1.5px;
-    border-radius: 10px;
-    background-color: #1b1b1b;
+  cursor: pointer;
+  color: #ffffff;
+  border: #ffffff solid 1.5px;
+  border-radius: 10px;
+  background-color: #1b1b1b;
 }
