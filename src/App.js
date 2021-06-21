@@ -38,7 +38,7 @@ function App() {
       {init ? (
         <AppRouter userObj={userObj} isLoggedIn={Boolean(userObj)} setUserObj={setUserObj} />
       ) : (
-        "initializiing"
+          <div className="loading"></div>
       )}
     </div>
   );
