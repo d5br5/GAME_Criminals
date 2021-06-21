@@ -16,15 +16,15 @@ function AuthForm({ authMode }) {
       if (authMode === "signUp") {
         await authService
           .createUserWithEmailAndPassword(email, password)
-          .then((res) => {
+          .then(async (res) => {
             const currUser = authService.currentUser;
-            currUser.updateProfile({
+            await currUser.updateProfile({
               displayName: nickname,
             });
           })
-          .then(() => {
+          .then(async () => {
             const currUser = authService.currentUser;
-            dbService.collection("users").doc(currUser.uid).set({
+            await dbService.collection("users").doc(currUser.uid).set({
               id: currUser.uid,
               nickname,
               point,
