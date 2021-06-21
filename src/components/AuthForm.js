@@ -23,7 +23,10 @@ function AuthForm({ authMode }) {
             });
           })
           .then(async () => {
-            const currUser = authService.currentUser;
+            const currUser = await authService.currentUser;
+            return currUser
+          })
+          .then(async (currUser)=>{
             await dbService.collection("users").doc(currUser.uid).set({
               id: currUser.uid,
               nickname,
