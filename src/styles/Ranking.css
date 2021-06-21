@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     width: 100vw;
     height: 100vh;
     max-width: 1920px;
@@ -15,20 +16,21 @@
 .rankingContent {
     position: absolute;
     top: 150px;
-    width: 600px;
+    width: 900px;
     height: auto;
     background-image: url("./../assets/no_radius_blackbox.jpg");
+    margin: 88px auto;
     background-repeat: repeat-y;
-    background-size: 600px auto;
+    background-size: 900px auto;
     color: white;
-    padding:30px;
+    padding:30px 60px;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+
 }
 
 .rankingTitle {
