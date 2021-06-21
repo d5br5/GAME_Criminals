@@ -9,7 +9,7 @@ import "../styles/Auth.css";
 
 const Auth = () => {
   const [authMode, setAuthMode] = useState("signIn");
-  const point = 60;
+  const point = 50;
 
   async function onSocialClick(e) {
     const { target } = e;

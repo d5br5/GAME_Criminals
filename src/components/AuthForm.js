@@ -8,7 +8,7 @@ function AuthForm({ authMode }) {
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
 
-  const point = 200;
+  const point = 50;
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -16,15 +16,18 @@ function AuthForm({ authMode }) {
       if (authMode === "signUp") {
         await authService
           .createUserWithEmailAndPassword(email, password)
-          .then((res) => {
+          .then(async (res) => {
             const currUser = authService.currentUser;
-            currUser.updateProfile({
+            await currUser.updateProfile({
               displayName: nickname,
             });
           })
-          .then(() => {
-            const currUser = authService.currentUser;
-            dbService.collection("users").doc(currUser.uid).set({
+          .then(async () => {
+            const currUser = await authService.currentUser;
+            return currUser
+          })
+          .then(async (currUser)=>{
+            await dbService.collection("users").doc(currUser.uid).set({
               id: currUser.uid,
               nickname,
               point,
