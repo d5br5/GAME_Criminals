@@ -57,14 +57,14 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
       sin2month = parseInt(sin2.split('개월')[0]);
     }
 
-    const sin1total = sin1year*12 + sin1month;
-    const sin2total = sin2year*12 + sin2month;
+    const sin1total = sin1year * 12 + sin1month;
+    const sin2total = sin2year * 12 + sin2month;
 
-    if(sin1total < sin2total){
+    if (sin1total < sin2total) {
       return [false, true];
-    }else if(sin1total > sin2total){
+    } else if (sin1total > sin2total) {
       return [true, false];
-    }else{
+    } else {
       return [true, true];
     }
 
@@ -78,11 +78,11 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
   const [gameEnd, setGameEnd] = useState(false);
 
   const solution = [
-    WhoIsWorse(criminals[0],criminals[1]),
-    WhoIsWorse(criminals[2],criminals[3]),
-    WhoIsWorse(criminals[4],criminals[5]),
-    WhoIsWorse(criminals[6],criminals[7]),
-    WhoIsWorse(criminals[8],criminals[9])
+    WhoIsWorse(criminals[0], criminals[1]),
+    WhoIsWorse(criminals[2], criminals[3]),
+    WhoIsWorse(criminals[4], criminals[5]),
+    WhoIsWorse(criminals[6], criminals[7]),
+    WhoIsWorse(criminals[8], criminals[9])
   ]
 
   const currCriminals = [criminals[stage * 2], criminals[stage * 2 + 1]];
@@ -99,7 +99,7 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
   const answerCheck1 = async (e) => {
     e.preventDefault();
     if (stage < criminals.length / 2) {
-      if(solution[stage][0]) setRightAnswer(rightAnswer+1);
+      if (solution[stage][0]) setRightAnswer(rightAnswer + 1);
       if (stage < criminals.length / 2 - 1) {
         setStage(stage + 1);
       } else if (stage === criminals.length / 2 - 1) {
@@ -111,7 +111,7 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
   const answerCheck2 = async (e) => {
     e.preventDefault();
     if (stage < criminals.length / 2) {
-      if(solution[stage][1]) setRightAnswer(rightAnswer+1);
+      if (solution[stage][1]) setRightAnswer(rightAnswer + 1);
       if (stage < criminals.length / 2 - 1) {
         setStage(stage + 1);
       } else if (stage === criminals.length / 2 - 1) {
@@ -121,12 +121,14 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
   }
 
   return !gameStart ? (
-    <div className="gameStartContainer">
-      <GameRules mode="2"/>
-      <button className="btnPlayGame" onClick={() => {
-        setGameStart(true)
-      }}>Game Start!
-      </button>
+    <div className="blackBox">
+      <div className="gameStartContainer">
+        <GameRules mode="2"/>
+        <button className="btnPlayGame" onClick={() => {
+          setGameStart(true)
+        }}>Game Start!
+        </button>
+      </div>
     </div>
   ) : (
     init ? (
@@ -140,12 +142,12 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
                 <div className="twoCriminalsWrapper">
                   <div className="criminalWrapper">
                     <img src={imgUrlArray[stage * 2]} alt=""/>
-                    <button className = "btnCriminals" onClick={answerCheck1}>{currCriminals[0].name}</button>
+                    <button className="btnCriminals" onClick={answerCheck1}>{currCriminals[0].name}</button>
                   </div>
-                  <span style={{width:"40px"}}></span>
+                  <span style={{width: "60px"}}></span>
                   <div className="criminalWrapper">
                     <img src={imgUrlArray[stage * 2 + 1]} alt=""/>
-                    <button className = "btnCriminals" onClick={answerCheck2}>{currCriminals[1].name}</button>
+                    <button className="btnCriminals" onClick={answerCheck2}>{currCriminals[1].name}</button>
                   </div>
                 </div>
               </div>

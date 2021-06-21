@@ -117,7 +117,7 @@
 .twoCriminalsWrapper{
     position:relative;
     top: 30px;
-    width: 85%;
+    width: 80%;
     height: auto;
     margin: 0px auto;
     display: flex;
@@ -130,7 +130,7 @@
 .criminalWrapper{
     position: relative;
     width: 100%;
-    height: 500px;
+    margin-top: 30px;
     overflow: hidden;
 }
 
@@ -146,7 +146,7 @@
     height: 50px;
     text-align: center;
     box-sizing: border-box;
-    margin-top: 30px;
+    margin-top: 60px;
     color: #000000;
     border: #000000 solid 1.5px;
     border-radius: 10px;

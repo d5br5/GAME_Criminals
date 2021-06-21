@@ -11,7 +11,7 @@
 .welcome {
   color: black;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 80px;
 }
 
 .welcome h1 {
@@ -34,6 +34,11 @@
 
 .authSelector {
   display: inline-block;
+}
+
+.auth{
+  margin-top: 20px;
+  display: inline-flex;
 }
 
 .authForm {

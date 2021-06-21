@@ -6,12 +6,12 @@
   justify-content: center;
   align-items: center;
   color: white;
-  height: 600px;
+  width: 600px;
 }
 
 .profileContent h1 {
   position: relative;
-  top: -32px;
+
   font-family: "Black Han Sans", sans-serif;
   letter-spacing: 0.1rem;
 }
@@ -20,7 +20,6 @@
   font-size: 1.2rem;
   border-collapse: collapse;
   position: relative;
-  top: -3rem;
 }
 
 .profileTable tr {
@@ -28,7 +27,7 @@
 }
 
 .profileTable td {
-  min-width: 100px;
+  min-width:150px;
   padding: 20px;
 }
 
@@ -45,7 +44,7 @@
   margin-top: 50px;
   color: #000000;
   border: #000000 solid 1.5px;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 10px;
   background-color: #ffffff;
   font-size: 1.2rem;

@@ -78,44 +78,46 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
         setRightAnswer(rightAnswer + 1);
       }
 
-      if(stage<criminals.length-1){
-        setStage(stage+1);
-      }else if (stage ===criminals.length-1){
+      if (stage < criminals.length - 1) {
+        setStage(stage + 1);
+      } else if (stage === criminals.length - 1) {
         setGameEnd(true);
       }
     }
   };
 
   return !gameStart ? (
-    <div className="gameStartContainer">
-      <GameRules mode="1"/>
-      <button  className="btnPlayGame" onClick={() => {
-        setGameStart(true)
-      }}>Game Start
-      </button>
+    <div className="blackBox">
+      <div className="gameStartContainer">
+        <GameRules mode="1"/>
+        <button className="btnPlayGame" onClick={() => {
+          setGameStart(true)
+        }}>Game Start
+        </button>
+      </div>
     </div>
   ) : (
     init ? (!gameEnd ? (
-      <div className="gameBody">
-        <div className="gameBoard">
-          <div className="gameBoardContent">
-            <div className="gameBoardContentHeader">
-              <h1>{stage+1} ROUND</h1> 
-              <h2>맞힌 개수 : {rightAnswer} /10 </h2>
-            </div>
-            <div className="criminalInfo">
-              <div className="img-wrapper">
-                <img src={imgUrlArray[stage]} alt=""/>
+        <div className="gameBody">
+          <div className="gameBoard">
+            <div className="gameBoardContent">
+              <div className="gameBoardContentHeader">
+                <h1>{stage + 1} ROUND</h1>
+                <h2>맞힌 개수 : {rightAnswer} /10 </h2>
               </div>
-              <h3>{currCriminal.name}</h3>
-            </div>
-            <div className="btn">
-              <button className="btnLeft" onClick={answerCheck}><i></i><p>{buttonOne}</p></button>
-              <button className="btnRight" onClick={answerCheck}><i></i><p>{buttonTwo}</p></button>
+              <div className="criminalInfo">
+                <div className="img-wrapper">
+                  <img src={imgUrlArray[stage]} alt=""/>
+                </div>
+                <h3>{currCriminal.name}</h3>
+              </div>
+              <div className="btn">
+                <button className="btnLeft" onClick={answerCheck}><i></i><p>{buttonOne}</p></button>
+                <button className="btnRight" onClick={answerCheck}><i></i><p>{buttonTwo}</p></button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       ) : (
         <GameResult rightAnswer={rightAnswer} userObj={userObj} setUserObj={setUserObj}/>
       )

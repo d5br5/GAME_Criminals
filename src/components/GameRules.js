@@ -1,7 +1,7 @@
-const GameRules = ({mode})=>{
+const GameRules = ({mode}) => {
 
-  return  <div className="gameRule">
-    {mode==="1" ?  <h1 style={{fontSize:"60px"}}>죄목 추측</h1>: <h1 style={{fontSize:"60px"}}>형량 대결</h1> }
+  return <div className="gameRule">
+    {mode === "1" ? <h1 style={{fontSize: "60px"}}>죄목 추측</h1> : <h1 style={{fontSize: "60px"}}>형량 대결</h1>}
     <h1>GAME RULE</h1>
     {
       mode === "1" ? <>
@@ -19,6 +19,7 @@ const GameRules = ({mode})=>{
 
     }
   </div>
+
 }
 
 export default GameRules;

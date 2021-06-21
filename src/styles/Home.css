@@ -29,9 +29,10 @@ a{
 
 .mainPage {
     display: flex;
-    width: 1000px;
     flex-direction: row;
     justify-content: center;
+    border-radius: 20px;
+    margin: 0;
 }
 
 .mainGameIntro {
@@ -42,6 +43,7 @@ a{
     color: white;
     font-size: 1.3rem;
     text-align: center;
+    border: 3px white solid;
     border-radius: 8px;
     transition-duration: 0.2s;
     width: 330px;

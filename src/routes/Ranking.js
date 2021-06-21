@@ -40,36 +40,38 @@ const Ranking = () => {
         dbService.doc(`users/${user.id}`)
           .update({level: giveLevelBox.shift()})
       )
-    // eslint-disable-next-line
+      // eslint-disable-next-line
     }, [dbService.collection("users")]
   )
 
   return (
     <div className="rankingBody">
-      <div className="rankingContent">
-        <h1 className="rankingTitle">Ranking</h1>
-        <table className="ranking_table">
-          <thead>
-          <tr>
-            <th className="ranking_number">순위</th>
-            <th className="ranking_userName">닉네임</th>
-            <th className="ranking_userPoint">포인트</th>
-            <th className="ranking_userLevel">레벨</th>
-          </tr>
-          </thead>
-          <tbody>
-
-          {users.map((user, index) => (
-            <tr key={index} className="ranking_eachUser">
-              <td className="ranking_number">{index + 1}</td>
-              <td className="ranking_userName">{user.nickname}</td>
-              <td className="ranking_userPoint">{user.point}</td>
-              <td className="ranking_userLevel">{user.level}</td>
+      <div className="blackBox">
+        <div className="rankingContent">
+          <h1 className="rankingTitle">Ranking</h1>
+          <table className="ranking_table">
+            <thead>
+            <tr>
+              <th className="ranking_number">순위</th>
+              <th className="ranking_userName">닉네임</th>
+              <th className="ranking_userPoint">포인트</th>
+              <th className="ranking_userLevel">레벨</th>
             </tr>
-          ))}
+            </thead>
+            <tbody>
 
-          </tbody>
-        </table>
+            {users.map((user, index) => (
+              <tr key={index} className="ranking_eachUser">
+                <td className="ranking_number">{index + 1}</td>
+                <td className="ranking_userName">{user.nickname}</td>
+                <td className="ranking_userPoint">{user.point}</td>
+                <td className="ranking_userLevel">{user.level}</td>
+              </tr>
+            ))}
+
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

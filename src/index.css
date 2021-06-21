@@ -18,14 +18,13 @@ code {
 
 .App {
   width: 100%;
-  height: 100%;
 }
 
 /*전체 배경*/
 
 .body {
-  background-image: url("./assets/blackbox.jpg"), url("./assets/background.jpg");
-  background-size: 900px 480px, cover;
+  background-image: url("./assets/background.jpg");
+  background-size:  cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -37,6 +36,7 @@ code {
   height: 100%;
   max-width: 1920px;
 }
+
 
 /*game 배경*/
 
@@ -50,8 +50,18 @@ code {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   max-width: 1920px;
+}
+
+.blackBox{
+  background-image: url("./assets/blackbox.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  padding: 70px;
+  margin: 80px;
 }
 
 .gameBody h2 {
@@ -59,14 +69,17 @@ code {
 }
 
 .loading {
-  background-image: url("./assets/logo.gif");
-  background-size: 283px 158px, cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.loadingLogo{
+  width: 500px;
+  margin-bottom: 30px;
 }

@@ -40,18 +40,28 @@ const GameResult = ({rightAnswer, userObj, setUserObj}) => {
   }, [])
 
 
-  return    <div className="gameResult">
+  return <div className="blackBox">
+    <div className="gameResult">
       <h1>GAME RESULT</h1>
       <table className="gameResultTable">
-      <tr><td>점수 :</td><td className="gameResultData">{rightAnswer*10}점</td></tr>
-      <tr><td>포인트 변화 :</td><td className="gameResultData">{pastPoint} ➞ {userObj.point}</td></tr>
-      <tr><td>현재 레벨 : </td><td className="gameResultData">{userObj.level}</td></tr>
+        <tr>
+          <td>점수 :</td>
+          <td className="gameResultData">{rightAnswer * 10}점</td>
+        </tr>
+        <tr>
+          <td>포인트 변화 :</td>
+          <td className="gameResultData">{pastPoint} ➞ {userObj.point}</td>
+        </tr>
+        <tr>
+          <td>현재 레벨 :</td>
+          <td className="gameResultData">{userObj.level}</td>
+        </tr>
       </table>
       <Link to="/">
         <button className="btnGoHome">GO HOME</button>
       </Link>
     </div>
-
+  </div>
 }
 
 export default GameResult;

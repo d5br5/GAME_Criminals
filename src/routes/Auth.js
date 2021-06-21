@@ -31,7 +31,10 @@ const Auth = () => {
   }
 
   return (
-    <div className="auth" style={{ display: "inline-flex" }}>
+    <div className="auth" style={{  }}>
+      <div style={{ width: 400 }}>
+        <AuthForm authMode={authMode} />
+      </div>
       <div className="authSelector" style={{ width: 400 }}>
         {authMode === "signIn" ? (
           <Button
@@ -64,9 +67,7 @@ const Auth = () => {
           Google 계정으로 로그인 &nbsp; <FontAwesomeIcon icon={faGoogle} />
         </Button>
       </div>
-      <div style={{ width: 400 }}>
-        <AuthForm authMode={authMode} />
-      </div>
+
     </div>
   );
 };

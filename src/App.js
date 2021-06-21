@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import AppRouter from "./components/AppRouter";
-import { authService, dbService } from "./fbase";
+import {authService, dbService} from "./fbase";
+import logo from './assets/logo.gif';
 
 function App() {
   const [init, setInit] = useState(false);
@@ -10,7 +11,7 @@ function App() {
     authService.onAuthStateChanged((user) => {
       if (user) {
         let point = 100;
-        let level = "";
+        let level = "LV.2";
         dbService
           .collection("users")
           .doc(user.uid)
@@ -26,11 +27,13 @@ function App() {
               point,
               level,
             });
-          });
+          }).then(()=>{
+            setInit(true);
+        })
       } else {
         setUserObj(null);
+        setInit(true);
       }
-      setInit(true);
     });
   }, []);
 
@@ -43,7 +46,10 @@ function App() {
           setUserObj={setUserObj}
         />
       ) : (
-        <div className="loading"></div>
+        <div className="loading">
+          <img src={logo} alt=""  className="loadingLogo"/>
+          Loading...
+        </div>
       )}
     </div>
   );

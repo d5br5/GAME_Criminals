@@ -5,6 +5,7 @@ import "../styles/Home.css"
 const Home = ({isLoggedIn}) => {
   return (
     <div className="body">
+      <div className="blackBox">
       {
         isLoggedIn && <div className='mainPage'>
           <Link to='/game1'>
@@ -15,7 +16,7 @@ const Home = ({isLoggedIn}) => {
               <p>[ 10라운드 ]</p>
             </div>
           </Link>
-          <span style={{width: "30px"}}></span>
+          <span style={{width: "80px"}}></span>
           <Link to='/game2'>
             <div className="mainGameIntro">
               <h1>Game 2</h1>
@@ -26,6 +27,7 @@ const Home = ({isLoggedIn}) => {
           </Link>
         </div>
       }
+      </div>
     </div>
   );
 };

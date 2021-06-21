@@ -14,14 +14,8 @@
 }
 
 .rankingContent {
-  width: 900px;
-  height: auto;
-  background-image: url("./../assets/no_radius_blackbox.jpg");
-  margin: 88px auto;
-  background-repeat: repeat-y;
-  background-size: 900px auto;
+  width: 700px;
   color: white;
-  padding: 30px 60px;
   box-sizing: border-box;
   border-radius: 32px;
   display: flex;
@@ -39,7 +33,7 @@
 .ranking_table {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
 }
 
 .ranking_table tr {
@@ -53,39 +47,39 @@
 
 .ranking_table th:nth-child(1) {
   padding-left: 18px;
-  width: 72px;
+  width: 10%;
 }
 
 .ranking_table th:nth-child(2) {
-  width: 180px;
+  width: 50%;
 }
 
 .ranking_table th:nth-child(3) {
-  width: 95px;
+  width: 20%;
 }
 
-.ranking_table th:nth-child(3) {
-  width: 50px;
+.ranking_table th:nth-child(4) {
+  width: 10%;
 }
 
 .ranking_eachUser td {
-  padding: 20px 25px 20px 25px;
+  padding: 20px 25px;
   border-bottom: 1px solid white;
 }
 
 .ranking_eachUser td:nth-child(1) {
-  width: 50px;
+  width: 10%;
 }
 
 .ranking_eachUser td:nth-child(2) {
-  width: 200px;
+  width: 50%;
 }
 
 .ranking_eachUser td:nth-child(3) {
   text-align: center;
-  width: 70px;
+  width: 20%;
 }
 
 .ranking_eachUser td:nth-child(4) {
-  width: 55px;
+  width: 10%;
 }
