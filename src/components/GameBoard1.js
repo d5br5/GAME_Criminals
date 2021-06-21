@@ -29,8 +29,10 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
   const [init, setInit] = useState(false);
   const [crimeList, setCrimeList] = useState([]);
   const [rightAnswer, setRightAnswer] = useState(0);
+  const [isRight, setIsRight] = useState(null);
   const [gameStart, setGameStart] = useState(false);
   const [gameEnd, setGameEnd] = useState(false);
+  const [isAnswering, setIsAnswering] = useState(false);
 
   const currCriminal = criminals[stage];
 
@@ -74,15 +76,24 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
   const answerCheck = async (e) => {
     e.preventDefault();
     if (stage <= 9) {
+      setIsAnswering(true);
       if (e.target.innerText === criminals[stage].crime) {
         setRightAnswer(rightAnswer + 1);
+        setIsRight(true)
+      } else {
+        setIsRight(false)
       }
 
-      if (stage < criminals.length - 1) {
-        setStage(stage + 1);
-      } else if (stage === criminals.length - 1) {
-        setGameEnd(true);
-      }
+      setTimeout(()=>{
+        setIsRight(null)
+        setIsAnswering(false);
+        if (stage < criminals.length - 1) {
+          setStage(stage + 1);
+        } else if (stage === criminals.length - 1) {
+          setGameEnd(true);
+        }
+      }, 1000 * 1)
+
     }
   };
 
@@ -105,9 +116,10 @@ const GameBoard1 = ({criminals, userObj, setUserObj}) => {
                 <h1>{stage + 1} ROUND</h1>
                 <h2>맞힌 개수 : {rightAnswer} /10 </h2>
               </div>
-              <div className="criminalInfo">
+              <div className={`criminalInfo ${isRight === true ? 'correct' : ''} ${isRight === false ? 'not_correct' : ''}`}>
+                <div className={`${isRight === true ? 'correct' : ''} ${isRight === false ? 'not_correct' : ''}`}></div>
                 <div className="img-wrapper">
-                  <img src={imgUrlArray[stage]} alt=""/>
+                  <img src={imgUrlArray[stage]} alt="" className={`${isAnswering === true ? 'isAnswering' : ''}`}/>
                 </div>
                 <h3>{currCriminal.name}</h3>
               </div>

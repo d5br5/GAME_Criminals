@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@800&display=swap');
 
+/*game board 공통*/
+
 .gameStartContainer {
     display: flex;
     flex-direction: column;
@@ -83,22 +85,49 @@
     line-height: 35px;
 }
 
+/*game board 1*/
+
 .criminalInfo {
     width:45%;
     margin:32px auto 0;
 }
 
-.img-wrapper {
+.criminalInfo .correct {
+    z-index: 1000;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 120px;
+    left: 250px;
+    background-image: url(./../assets/blue_o.svg);
+    background-repeat: no-repeat;
+}
+
+.criminalInfo .not_correct {
+    z-index: 1000;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 120px;
+    left: 250px;
+    background-image: url(./../assets/red_x.svg);
+    background-repeat: no-repeat;
+}
+
+.criminalInfo .img-wrapper {
     position: relative;
     width: 100%;
     height: 376px;
     overflow: hidden;
+    z-index: 1;
   }
 
-.img-wrapper img {
+.criminalInfo .img-wrapper img {
+    position: relative;
     max-width: 100%;
     height: auto;
     display: block;
+    z-index: 1;
   }
 
 .criminalInfo h3 {
@@ -110,6 +139,10 @@
     line-height: 2rem;
     margin-block-end: 0;
     box-sizing: border-box;
+}
+
+.criminalInfo img.isAnswering {
+    filter: grayscale(1);
 }
 
 /*game board 2*/
@@ -141,28 +174,32 @@
 
 }
 
-.btnCriminals {
-    width: 260px;
-    height: 50px;
-    text-align: center;
-    box-sizing: border-box;
-    margin-top: 60px;
-    color: #000000;
-    border: #000000 solid 1.5px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition-duration: 0.1s;
+.criminalWrapper .correct {
+    z-index: 1000;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 70px;
+    left: 50px;
+    background-image: url(./../assets/blue_o.svg);
+    background-repeat: no-repeat;
+    background-size: 200px;
 }
 
-.btnCriminals:hover {
-    cursor: pointer;
-    color: #ffffff;
-    border: #ffffff solid 1.5px;
-    border-radius: 10px;
-    background-color: #1b1b1b;
+.criminalWrapper .not_correct{
+    z-index: 1000;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 70px;
+    left: 50px;
+    background-image: url(./../assets/red_x.svg);
+    background-repeat: no-repeat;
+    background-size: 200px;
+}
+
+.criminalWrapper.not_correct img{
+    filter:grayscale(1);
 }
 
 .criminalWrapper h3{
@@ -174,13 +211,7 @@
     box-sizing: border-box;
 }
 
-/*.btn button.result p {
-    /* 폰트 컬러 변경 
-}
-
-.btn button.notResult p {
-
-}*/
+/*game board 1 btn*/
 
 .btn {
     width: 70%;
@@ -189,14 +220,6 @@
     justify-content: space-between;
     align-items: stretch;
     margin: 0 auto;
-}
-
-.btn button.result i {
-    background-image:url(./../assets/icon_o.svg) !important;
-}
-
-.btn button.notResult i {
-    background-image:url(./../assets/icon_x.svg) !important;
 }
 
 .btn button > i {
@@ -231,23 +254,7 @@
     line-height: 1.2rem;
 }
 
-.btnLeft {
-    font-family: 'Gothic A1', sans-serif;
-    width: 220px;
-    height: 50px;
-    text-align: center;
-    box-sizing: border-box;
-    margin-top: 30px;
-    color: #000000;
-    border: #000000 solid 1.5px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition-duration: 0.1s;
-}
-
-.btnRight {
+.btnLeft, .btnRight {
     font-family: 'Gothic A1', sans-serif;
     width: 220px;
     height: 50px;
@@ -264,6 +271,72 @@
 }
 
 .btnLeft:hover, .btnRight:hover {
+    border-color: white;
+    background-color: black;
+    color : white;
+}
+
+/*game board 2 btn*/
+
+.btn2 {
+    width: 270px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0 auto;
+}
+
+.btn2 button > i {
+    display: inline-block;
+    width: 25px;
+    height: 25px; 
+    background-image: url(./../assets/icon_check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    vertical-align: middle;
+}
+
+.btn2 button > i:hover {
+    display: inline-block;
+    width: 25px;
+    height: 25px; 
+    background-image: url(./../assets/icon_check_black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    vertical-align: middle;
+}
+
+.btn2 button > p {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    margin-left: 8px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    line-height: 1.2rem;
+}
+
+.btnLeft2, .btnRight2 {
+    font-family: 'Gothic A1', sans-serif;
+    width: 260px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+    color: #000000;
+    border: #000000 solid 1.5px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+
+.btnLeft2:hover, .btnRight2:hover {
     border-color: white;
     background-color: black;
     color : white;

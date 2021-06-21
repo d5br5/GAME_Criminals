@@ -76,6 +76,8 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
   const [rightAnswer, setRightAnswer] = useState(0);
   const [gameStart, setGameStart] = useState(false);
   const [gameEnd, setGameEnd] = useState(false);
+  const [whichIsRight, setWhichIsRight] = useState(null);
+  const [isRight, setIsRight] = useState(null);
 
   const solution = [
     WhoIsWorse(criminals[0], criminals[1]),
@@ -98,25 +100,52 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
 
   const answerCheck1 = async (e) => {
     e.preventDefault();
+    
     if (stage < criminals.length / 2) {
-      if (solution[stage][0]) setRightAnswer(rightAnswer + 1);
-      if (stage < criminals.length / 2 - 1) {
-        setStage(stage + 1);
-      } else if (stage === criminals.length / 2 - 1) {
-        setGameEnd(true);
+      setIsRight('left')
+
+      if (solution[stage][0]) {
+        setRightAnswer(rightAnswer + 1);
+        setWhichIsRight('left')
+      } else {
+        setWhichIsRight('right')
       }
+
+      setTimeout(()=>{
+        setWhichIsRight(null)
+        setIsRight(null)
+        if (stage < criminals.length / 2 - 1) {
+          setStage(stage + 1);
+        } else if (stage === criminals.length / 2 - 1) {
+          setGameEnd(true);
+        }
+      }, 1000 * 1);
     }
   }
 
   const answerCheck2 = async (e) => {
     e.preventDefault();
     if (stage < criminals.length / 2) {
-      if (solution[stage][1]) setRightAnswer(rightAnswer + 1);
-      if (stage < criminals.length / 2 - 1) {
-        setStage(stage + 1);
-      } else if (stage === criminals.length / 2 - 1) {
-        setGameEnd(true);
+
+      setIsRight('right')
+
+      if (solution[stage][1]) {
+          setRightAnswer(rightAnswer + 1);
+          setWhichIsRight('right')
+
+      } else {
+        setWhichIsRight('left')
+
       }
+      setTimeout(()=>{
+        setWhichIsRight(null)
+        setIsRight(null)
+        if (stage < criminals.length / 2 - 1) {
+          setStage(stage + 1);
+        } else if (stage === criminals.length / 2 - 1) {
+          setGameEnd(true);
+        }
+      }, 1000 * 1);
     }
   }
 
@@ -139,15 +168,21 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
               <div className="gameBoardContentHeader">
                 <h1>{stage + 1} ROUND</h1>
                 <h2>맞힌 개수 : {rightAnswer} / 5</h2>
-                <div className="twoCriminalsWrapper">
-                  <div className="criminalWrapper">
+                <div className={`twoCriminalsWrapper`}>
+                  <div className={`criminalWrapper ${whichIsRight === 'left' ? 'correct' : whichIsRight && 'not_correct'}`}>
+                    <div className={`${isRight === 'left' && whichIsRight === 'left' ? 'correct' : (isRight === 'left' && whichIsRight === 'right') && 'not_correct'}`}></div>
                     <img src={imgUrlArray[stage * 2]} alt=""/>
-                    <button className="btnCriminals" onClick={answerCheck1}>{currCriminals[0].name}</button>
+                    <div className="btn2">
+                      <button className="btnLeft2" onClick={answerCheck1}><i></i><p>{currCriminals[0].name}</p></button>
+                    </div>
                   </div>
                   <span style={{width: "60px"}}></span>
-                  <div className="criminalWrapper">
+                  <div className={`criminalWrapper ${whichIsRight === 'right' ? 'correct' : whichIsRight && 'not_correct'}`}>
+                  <div className={`${isRight === 'right' && whichIsRight === 'right' ? 'correct' : (isRight === 'right' && whichIsRight === 'left') && 'not_correct'}`}></div>
                     <img src={imgUrlArray[stage * 2 + 1]} alt=""/>
-                    <button className="btnCriminals" onClick={answerCheck2}>{currCriminals[1].name}</button>
+                    <div className="btn2">
+                      <button className="btnRight2" onClick={answerCheck2}><i></i><p>{currCriminals[1].name}</p></button>
+                    </div>
                   </div>
                 </div>
               </div>
