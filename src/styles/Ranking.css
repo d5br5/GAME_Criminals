@@ -17,7 +17,7 @@
     top: 150px;
     width: 600px;
     height: auto;
-    background-image: url(./../assets/no_radius_blackbox.jpg);
+    background-image: url("./../assets/no_radius_blackbox.jpg");
     background-repeat: repeat-y;
     background-size: 600px auto;
     color: white;
@@ -43,8 +43,7 @@
     width: 500px;
 }
 
-.ranking_table thead tr {
-    width: 500px;
+.ranking_table tr {
     border-bottom: 2px solid white;
 }
 
@@ -66,9 +65,10 @@
     width: 95px;
 }
 
+
 .ranking_eachUser td {
-    border-bottom: 1px solid white;
     padding: 20px 25px 20px 25px;
+    border-bottom: 1px solid white;
 }
 
 .ranking_eachUser td:nth-child(1) {

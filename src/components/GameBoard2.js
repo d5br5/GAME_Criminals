@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {dbService, storageService} from "../fbase";
+import {storageService} from "../fbase";
 import GameResult from "./GameResult";
 import GameRules from "./GameRules";
 import "../styles/GameBoard.css";
@@ -93,6 +93,7 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
       setInit(true);
     });
     // console.log(solution);
+    // eslint-disable-next-line
   }, []);
 
   const answerCheck1 = async (e) => {

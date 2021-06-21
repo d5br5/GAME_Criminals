@@ -19,6 +19,7 @@ const Game2 = ({userObj, setUserObj}) =>{
         setCriminals(criminalsArray);
         setInit(true);
       });
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -1,6 +1,21 @@
+.welcomeBody {
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1920px;
+}
+
 .welcome {
-    color: white;
+    color: black;
     text-align: center;
+    padding-top: 30px;
 }
 
 .welcome h1{
@@ -15,16 +30,23 @@
     font-size: 2.3rem;
 }
 
+.mainLogo{
+    margin: 5px;
+    width: 700px;
+    display: inline-block;
+}
+
 .authSelector{
     width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 40px 0;
+    margin: 40px auto 20px;
 }
 
 .authForm{
     width: 250px;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
@@ -38,6 +60,8 @@
     width: 250px;
     height: 40px;
 }
+
+
 
 .loginError{
     margin-top: 20px;

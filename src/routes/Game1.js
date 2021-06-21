@@ -19,19 +19,13 @@ const Game1 = ({userObj, setUserObj}) => {
         setCriminals(criminalsArray);
         setInit(true);
       });
+    // eslint-disable-next-line
   },[]);
 
   return (
     init &&
     criminals.length === numOfGames && (
       <div className="body">
-        {/* [ List of Criminals of This Game1 ] - 배포시 삭제
-        {criminals.map((criminal, index) => (
-          <div key={index}>
-            {index + 1} ----- index : {criminal.index} / name : {criminal.name}{" "}
-            / crime : {criminal.crime}
-          </div>
-        ))} */}
         <GameBoard1 criminals={criminals} userObj={userObj} setUserObj={setUserObj}/>
       </div>
     )

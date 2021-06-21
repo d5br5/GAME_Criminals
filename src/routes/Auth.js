@@ -10,7 +10,6 @@ import '../styles/Auth.css';
 const Auth = () => {
 
   const [authMode, setAuthMode] = useState('signIn');
-  const [processing, setProcessing] = useState(false);
   const point = 60;
 
   async function onSocialClick(e) {
@@ -31,7 +30,7 @@ const Auth = () => {
   }
 
   return (
-    <>
+    <div className="auth">
       <AuthForm authMode={authMode}/>
       <div className="authSelector">
         {
@@ -41,7 +40,6 @@ const Auth = () => {
               color="secondary"
               onClick={() => {
                 setAuthMode('signUp');
-                setProcessing(true)
               }}>회원가입
             </Button>
           ) : (
@@ -50,7 +48,6 @@ const Auth = () => {
               color="secondary"
               onClick={() => {
                 setAuthMode('signIn');
-                setProcessing(true)
               }}>로그인으로 돌아가기
             </Button>
           )}
@@ -59,7 +56,7 @@ const Auth = () => {
           color="secondary"
           onClick={onSocialClick} name="google">Google 계정으로 로그인 &nbsp; <FontAwesomeIcon icon={faGoogle}/></Button>
       </div>
-    </>
+    </div>
   );
 };
 

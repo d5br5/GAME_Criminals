@@ -7,17 +7,17 @@ import {
 } from "react-router-dom";
 import Navigation from "./Navigation";
 
-import {Home, Profile, Game1, Game2, Ranking} from "../routes";
+import {Home, Profile, Game1, Game2, Ranking, Welcome} from "../routes";
 
 function AppRouter({isLoggedIn, userObj, setUserObj}) {
   if (!isLoggedIn) {
     return (
       <div>
         <Router>
-          <Navigation userObj={userObj} isLoggedIn={isLoggedIn}/>
           <Switch>
             <Route exact path="/">
-              <Home isLoggedIn={isLoggedIn}/>
+
+              <Welcome/>
             </Route>
             <Redirect from="*" to="/"/>
           </Switch>
