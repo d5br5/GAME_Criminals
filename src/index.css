@@ -55,3 +55,16 @@ code {
 .gameBody h2 {
   color: white;
 }
+
+.loading {
+  background-image: url("./assets/logo.gif");
+  background-size: 283px 158px, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
