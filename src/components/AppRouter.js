@@ -7,45 +7,44 @@ import {
 } from "react-router-dom";
 import Navigation from "./Navigation";
 
-import {Home, Profile, Game1, Game2, Ranking, Welcome} from "../routes";
+import { Home, Profile, Game1, Game2, Ranking, Welcome } from "../routes";
 
-function AppRouter({isLoggedIn, userObj, setUserObj}) {
+function AppRouter({ isLoggedIn, userObj, setUserObj }) {
   if (!isLoggedIn) {
     return (
       <div>
         <Router>
           <Switch>
             <Route exact path="/">
-
-              <Welcome/>
+              <Welcome />
             </Route>
-            <Redirect from="*" to="/"/>
+            <Redirect from="*" to="/" />
           </Switch>
         </Router>
       </div>
     );
   }
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <Router>
-        <Navigation userObj={userObj} isLoggedIn={isLoggedIn}/>
+        <Navigation userObj={userObj} isLoggedIn={isLoggedIn} />
         <Switch>
           <Route exact path="/" replace>
-            <Home isLoggedIn={isLoggedIn}/>
+            <Home isLoggedIn={isLoggedIn} />
           </Route>
           <Route exact path="/profile" replace>
-            <Profile userObj={userObj}/>
+            <Profile userObj={userObj} />
           </Route>
           <Route exact path="/game1" replace>
-            <Game1 userObj={userObj} setUserObj={setUserObj}/>
+            <Game1 userObj={userObj} setUserObj={setUserObj} />
           </Route>
           <Route exact path="/game2" replace>
-            <Game2 userObj={userObj} setUserObj={setUserObj}/>
+            <Game2 userObj={userObj} setUserObj={setUserObj} />
           </Route>
           <Route exact path="/ranking" replace>
-            <Ranking/>
+            <Ranking />
           </Route>
-          <Redirect from="*" to="/"/>
+          <Redirect from="*" to="/" />
         </Switch>
       </Router>
     </div>
