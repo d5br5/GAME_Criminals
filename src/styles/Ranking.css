@@ -7,14 +7,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   height: max-content;
   max-width: 1920px;
 }
 
 .rankingContent {
-  width: 700px;
+  width: 630px;
   color: white;
   box-sizing: border-box;
   border-radius: 32px;
@@ -30,56 +29,31 @@
   color: white;
 }
 
-.ranking_table {
-  display: flex;
-  flex-direction: column;
+.ranking_eachUser{
   width: 100%;
-}
-
-.ranking_table tr {
-  border-bottom: 2px solid white;
-}
-
-.ranking_table th {
-  text-align: left;
-  padding: 5px 15px 5px 15px;
-}
-
-.ranking_table th:nth-child(1) {
-  padding-left: 18px;
-  width: 10%;
-}
-
-.ranking_table th:nth-child(2) {
-  width: 50%;
-}
-
-.ranking_table th:nth-child(3) {
-  width: 20%;
-}
-
-.ranking_table th:nth-child(4) {
-  width: 10%;
-}
-
-.ranking_eachUser td {
-  padding: 20px 25px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  line-height: 50px;
   border-bottom: 1px solid white;
 }
 
-.ranking_eachUser td:nth-child(1) {
-  width: 10%;
-}
-
-.ranking_eachUser td:nth-child(2) {
-  width: 50%;
-}
-
-.ranking_eachUser td:nth-child(3) {
+.ranking_eachUser .ranking_number{
+  width : 20%;
   text-align: center;
-  width: 20%;
 }
 
-.ranking_eachUser td:nth-child(4) {
-  width: 10%;
+.ranking_eachUser .ranking_userName{
+  width : 40%;
+  padding-left: 30px;
+}
+
+.ranking_eachUser .ranking_userPoint{
+  width : 20%;
+  text-align: center;
+}
+
+.ranking_eachUser .ranking_userLevel{
+  width : 20%;
+  text-align: center;
 }

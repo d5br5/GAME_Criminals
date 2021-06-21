@@ -20,15 +20,15 @@ const Profile = ({userObj}) => {
             <thead></thead>
             <tbody>
             <tr>
-              <td>닉네임 :</td>
+              <td><strong>닉네임</strong></td>
               <td className="profileData">{userObj.nickname}</td>
             </tr>
             <tr>
-              <td>포인트 :</td>
+              <td><strong>포인트</strong></td>
               <td className="profileData">{userObj.point}</td>
             </tr>
             <tr>
-              <td>레벨 :</td>
+              <td><strong>레벨</strong></td>
               <td className="profileData">{userObj.level}</td>
             </tr>
             </tbody>

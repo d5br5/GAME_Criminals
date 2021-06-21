@@ -19,6 +19,7 @@
 .profileTable {
   font-size: 1.2rem;
   border-collapse: collapse;
+  text-align: center;
   position: relative;
 }
 
