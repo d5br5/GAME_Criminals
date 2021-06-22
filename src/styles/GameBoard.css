@@ -341,3 +341,12 @@
     background-color: black;
     color : white;
 }
+
+.sentence {
+    font-family: 'Gothic A1', sans-serif;
+    color: red;
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+}

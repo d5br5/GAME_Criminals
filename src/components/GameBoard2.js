@@ -21,16 +21,20 @@ async function fetchImgs(criminals) {
   return imgUrls;
 }
 
-
 const GameBoard2 = ({criminals, userObj, setUserObj}) => {
 
   const WhoIsWorse = (criminal1, criminal2) => {
+    const EXECUTION = '사형선고';
     const INF = '종신형';
     const ZERO = '벌금형';
     const sin1 = criminal1.sentence;
     const sin2 = criminal2.sentence;
     if (sin1 === sin2) {
       return [true, true];
+    } else if (sin1 === EXECUTION) {
+      return [true, false];
+    } else if (sin2 === EXECUTION) {
+      return [false, true];
     } else if (sin1 === INF) {
       return [true, false];
     } else if (sin2 === INF) {
@@ -45,6 +49,7 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
     let sin1month = 0;
     let sin2year = 0;
     let sin2month = 0;
+
     if (sin1.slice(-1) === '년') {
       sin1year = parseInt(sin1.split('년')[0]);
     } else if (sin1.slice(-1) === '월') {
@@ -100,6 +105,8 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
 
   const answerCheck1 = async (e) => {
     e.preventDefault();
+
+    console.log(criminals[stage].sentence, criminals[stage+1].sentence);
     
     if (stage < criminals.length / 2) {
       setIsRight('left')
@@ -119,7 +126,7 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
         } else if (stage === criminals.length / 2 - 1) {
           setGameEnd(true);
         }
-      }, 1000 * 1);
+      }, 2100 * 1);
     }
   }
 
@@ -145,7 +152,7 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
         } else if (stage === criminals.length / 2 - 1) {
           setGameEnd(true);
         }
-      }, 1000 * 1);
+      }, 2100 * 1);
     }
   }
 
@@ -173,16 +180,32 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
                     <div className={`${isRight === 'left' && whichIsRight === 'left' ? 'correct' : (isRight === 'left' && whichIsRight === 'right') && 'not_correct'}`}></div>
                     <img src={imgUrlArray[stage * 2]} alt=""/>
                     <div className="btn2">
-                      <button className="btnLeft2" onClick={answerCheck1}><i></i><p>{currCriminals[0].name}</p></button>
+                      <button className="btnLeft2" onClick={answerCheck1}><i></i>
+                        <p>{currCriminals[0].name}</p>
+                      </button>
                     </div>
+                    { whichIsRight === null ?
+                        null:
+                        <div className="sentence">
+                          <p>{currCriminals[0].sentence}</p>
+                        </div>
+                    }
                   </div>
                   <span style={{width: "60px"}}></span>
                   <div className={`criminalWrapper ${whichIsRight === 'right' ? 'correct' : whichIsRight && 'not_correct'}`}>
                   <div className={`${isRight === 'right' && whichIsRight === 'right' ? 'correct' : (isRight === 'right' && whichIsRight === 'left') && 'not_correct'}`}></div>
                     <img src={imgUrlArray[stage * 2 + 1]} alt=""/>
                     <div className="btn2">
-                      <button className="btnRight2" onClick={answerCheck2}><i></i><p>{currCriminals[1].name}</p></button>
+                      <button className="btnRight2" onClick={answerCheck2}><i></i>
+                        <p>{currCriminals[1].name}</p>
+                      </button>
                     </div>
+                    { whichIsRight === null ?
+                        null:
+                        <div className="sentence">
+                          <p>{currCriminals[1].sentence}</p>
+                        </div>
+                    }
                   </div>
                 </div>
               </div>
