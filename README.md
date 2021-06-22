@@ -1,5 +1,8 @@
 # PROJECT - 범죄자 관상 테스트
 
+## Production
+- https://snuweb-team6.vercel.app
+
 ## 시작하기 전에
 
 :boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 브라우저 콘솔에 'FirebaseAppImpl' 객체 출력되는지 확인 :boom:
