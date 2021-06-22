@@ -19,16 +19,16 @@ const Ranking = () => {
       });
   }, []);
 
-  const levelBox = ['LV.1', 'LV.2', 'LV.3', 'LV.4'];
+  const levelBox = ['까막눈', '일반인', '관상가', '초인'];
   const giveLevelBox = [];
   const numOfUsers = users.length;
 
   for (let i = 1; i < numOfUsers + 1; i++) {
-    if (i <= Math.floor(numOfUsers / 10)) {
+    if (i <= Math.floor(numOfUsers / 100 * 8)) {
       giveLevelBox.push(levelBox[3]);
-    } else if (i <= Math.floor(numOfUsers / 10 * 3)) {
+    } else if (i <= Math.floor(numOfUsers / 100 * 24)) {
       giveLevelBox.push(levelBox[2]);
-    } else if (i <= Math.floor(numOfUsers / 10 * 6)) {
+    } else if (i <= Math.floor(numOfUsers / 100 * 60)) {
       giveLevelBox.push(levelBox[1]);
     } else {
       giveLevelBox.push(levelBox[0]);

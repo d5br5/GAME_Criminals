@@ -99,15 +99,12 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
       setImageUrlArray(e);
       setInit(true);
     });
-    // console.log(solution);
     // eslint-disable-next-line
   }, []);
 
   const answerCheck1 = async (e) => {
     e.preventDefault();
 
-    console.log(criminals[stage].sentence, criminals[stage+1].sentence);
-    
     if (stage < criminals.length / 2) {
       setIsRight('left')
 

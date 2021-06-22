@@ -9,13 +9,12 @@ import "../styles/Auth.css";
 
 const Auth = () => {
   const [authMode, setAuthMode] = useState("signIn");
-  const point = 50;
+  const point = 200;
 
   async function onSocialClick(e) {
     const { target } = e;
     const name = target?.name || "google";
     let provider;
-    console.log({ name });
     if (name === "google") {
       provider = new firebaseInstance.auth.GoogleAuthProvider();
     }

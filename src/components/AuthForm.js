@@ -8,7 +8,7 @@ function AuthForm({ authMode }) {
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
 
-  const point = 50;
+  const point = 200;
 
   async function onSubmit(e) {
     e.preventDefault();
