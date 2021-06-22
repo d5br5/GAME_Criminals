@@ -67,7 +67,6 @@ const GameBoard1 = ({ criminals, userObj, setUserObj }) => {
   const [isAnswering, setIsAnswering] = useState(false);
   const [randNumForButton, setRandNumForButton] = useState(0);
   const [randNumForCrime, setRandNumForCrime] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
   const currCriminal = criminals[stage];
 
