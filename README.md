@@ -1,122 +1,63 @@
+# PROJECT - 범죄자 관상 테스트
+
 ## 시작하기 전에
 
 :boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 브라우저 콘솔에 'FirebaseAppImpl' 객체 출력되는지 확인 :boom:
 
-:boom: firebase 콘솔을 공유하는게 편할 것 같네용.. 수정하겠습니다.
-
 :boom: 코드 작성 중 발생하는 모든 문제는 이슈에 남겨주세요. :boom:
 
-<!-- 
-```javascript
-** fbase.js **
+## 기능 명세
 
-import firebase from "firebase/app";
+### 개요
+- 회원가입 및 로그인 / 구글 계정으로 진행 가능. 로그인 에러시 에러내용 출력됨.
+- 회원가입, 구글 계정 최초 로그인시 DB 'user' collection에 uid, level, nickname, point 를 필드로 갖는 문서 생성
+- 비로그인시 로그인화면만 출력. 로그인시 메인으로 이동.
+- user 및 game 정보 loading 미완시 Loading 화면 출력
+- 내부 라우팅은 /home, /game1, /game2, /profile, /ranking 으로 구성 (React-Router-Dom 사용)
+- route별 세부 기능은 하단 항목 참조
 
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/storage";
-
-// firebase console 에서 project 생성 후 발급받은 key 복붙
-const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-export const firebaseInstance = firebase;
-export const dbService = firebase.firestore();
-export const authService = firebase.auth();
-export const storageService = firebase.storage();
-export default authService;
-```
-
-### firebase key 발급 방법
-
-- firebase 홈페이지 접속 후 구글 로그인: https://firebase.google.com/
-- 우측 상단 '콘솔로 이동' 버튼 클릭
-- '프로젝트 추가' 클릭
-- 프로젝트 이름 아무거나 입력 (ex. team6) 후 '계속'
-- 이 프로젝트에서 Google 애널리틱스 사용 설정 '해제'
-- 프로젝트 생성 후, '앱을 추가하여 시작하기' 부분 버튼 중 '</>' 클릭
-- 앱 닉네임 아무거나 입력(team6), 호스팅 설정 '체크X'
-- 발급된 SDK 문서에 존재하는 key 복사 후 firebase.js에 붙여넣기
-
-### firebase 사전 설정
-- FB Console -> authentication -> sign-in methods -> '이메일/비밀번호','google' 사용 설정
-- Firestore Database 생성 -> testmode -> timezone 'northeast3'
- -->
-
-## PROJECT - 범죄자 관상 테스트
-### DB
-- 범죄자 : 이름, 사진, 죄목, 형량
-- 유저 : 계정, 닉네임, 완료 경기 수, 티어, 포인트
+### firebase DB 
+- crimes : index, crime   
+- criminals : index, crime, additional crime, crime record, name, sentence
+- users : uid, nickname, level, point
+- 범죄자 사진은 Storage에 저장. 해당 범죄자의 index를 사진명으로 저장하여 연동.
 
 ### 레벨
-- 게임 '리그오브레전드' 와 유사한 랭크 제도
-- 전체 유저를 포인트 순으로 나열 후 일정 비율 구간으로 분할하여 등급 부여
-- ex) Lv1 40% / Lv2 30% / Lv3 20% / Lv4 10%
+- 랭크 제도. 전체 유저를 포인트 순으로 나열 후 일정 비율 구간으로 분할하여 등급 부여
+    - ex) Lv1 40% / Lv2 30% / Lv3 20% / Lv4 10%
+- 유저 포인트 변동시 그에 따라 타 유저들의 레벨 자동으로 변동
 
-### 게임
-- '게임시작' 버튼 클릭으로 시작
-- DB에 저장된 사진과 이름이 화면 상에 2쌍 출력 (ex. '김길동, 사진' vs '홍길동, 사진')
+### /main
+- Game1, Game2 선택 가능
+- Game1 : 범죄자 죄목 추측 / Game2 : 범죄자 형량 대결
+- Game 선택 시 해당 game route 로 이동
+- 이동 후 첫 화면에는 해당 게임 룰 출력. Game Start 버튼으로 게임 시작
+- 게임 종료 후 최종 스코어 (100점 만점) 공개. 이에 상응하는 포인트 획득
+- 획득된 포인트는 firebase user collection에 자동으로 반영.
+
+#### game 1 : 범죄자 죄목 추측
+- 10라운드로 구성 
+- DB에 저장된 한 범죄자의 사진과 이름이 화면 상에 출력
+- 해당 범죄자가 저질렀을 것 같은 범죄의 죄목을 선택, 이후 즉시 정답 공개
+
+#### game 2 : 범죄자 형량 대결
+- 5라운드로 구성
+- DB에 저장된 두 범죄자의 사진과 이름이 화면 상에 출력
 - 형량이 높을 것 같은 사람을 관상만으로 선택, 이후 즉시 정답 공개
-- 총 10세트 진행 후 게임 종료. 종료 후 최종 스코어 (x개/10개) 출력
-- 경험치 획득 (0-2개 : 강한 하락 / 3-4개 : 약한 하락 / 5-6개 : 변동X / 7-8개 : 약한 상승 / 9-10개 : 강한 상승)
 
-### 유저 프로필
-- 계정, 닉네임, 완료 경기 수, 티어, 포인트 확인 가능
+### /profile
+- 로그인한 유저의 닉네임, 포인트, 레벨 확인 가능
+- 로그아웃 가능
 
-### 랭킹
-- 티어별(포인트별) 내림차순 정렬
-
-### TODO
-1. 사람들 이름, 죄목, 형량 엑셀로 정리하고 각 사람들 사진 따로 저장해두기. (바로 1번 하면 헤맬까봐)
-2. firestore database 내 'criminals' collection 에 범죄자별로 {이름, 죄목, 형량, 사진링크(storage에 저장된 사진)} 문서 생성하기
-3. storage 에 사람들 사진 올려두고 각 사진 링크 위 문서에 적용해두기.
-4. game 접속후 '시작'시 db에 저장된 사람 중 랜덤 2사람 선택되어 화면에 출력 (둘 중 하나 선택 가능하게)
-4-1. 1게임은 10세트로 끝내기. 한 게임 내에서는 사람 중복되지 않게.
-4-2. 클릭할때마다 바로바로 결과 보여주기.
-4-2. 1게임 끝낸 후 최종 포인트 변화 알려주고, user db에 반영
-5. 전체 유저들 point 변동에 따라 각각 랭크 자동으로 변동되게
-6. css
-
-## 공지사항
-
-### project
-- OPEN API + firebase를 이용한 웹 어플리케이션 제작
-- 원본 git : https://github.com/snuwebprogramming-21-1/final-project
-- 조별주제는 https://docs.google.com/spreadsheets/d/1cysxO9JDLIQH0y6yMfmX8KUYX-H2HyHp9BjaRMaBl-U/edit#gid=0 
-- react, github 이용을 필수, 별도의 외부 라이브러리 사용 가능
+### /ranking
+- 전체 유저의 순위, 닉네임, 포인트, 레벨 확인 가능 (포인트 내림차순)
+- 유저들의 포인트 변동시 그에 따라 레벨이 실시간으로 변동
 
 
-### 발표
-
-- 4,3,1,2,7,6,5 조 순서. 조별 10-15분
-- 발표 자료는 23일 18시 이전 mongmaker721@gmail.com 으로 제출한다.
-- 발표 내용 : 주제, 과제 하면서 제일 중심을 뒀던 부분, 실제 제품 실행, 실제 겪은 애로사항 및 해결방안 기반
-- ppt에 심한 공을 기울이지 말 것.
-- 발표 평가는 강사 평가(20) + 조별 평가(80). 채점표는 주제, 문제해결, 제품의 마감 세 가지를 기본으로 하여 제공.
-
-### code
-
-- 코드는 github.com public repository 로 제출. 각 조별로 깃헙 이슈로 repo url을 남긴다.
-- 코드의 평가는 repo의 마스터 브랜치의 23일 17시까지 올라온 최신 본을 기준으로 한다. 단, 이전 버전으로의 평가를 원할 시 따로 해당 사안을 전달할 수 있다.
-- 코드 평가 요소는
-  - 주어진 기능들을 적절히 잘 만들었는가
-  - react의 기능들을 적절하게 잘 사용했는가
-  - web request를 잘 모듈화하고, 해당 기능에 대한 ux 및 에러핸들링을 적절히 하였는가
-  - 설치한 라이브러리를 잘 이해하고 적절히 사용했는가
-  - lint, 변수명을 잘 썻는가. 기능별로 파일을 잘 분리하였는가
-를 주로 하여 평가한다. (중요도 순 정렬.)
 
 
-### 점수
-
-- 제품에 대한 평가 (25) + 발표 평가(25) + 코드 평가 (50) 의 합산
-- 코드 평가는 개인별 작업량 및 난이도에 따라 같은 조여도 상이할 수 있다.
+### 수업 git
+- https://github.com/snuwebprogramming-21-1/final-project
+  
+### 조별주제
+- https://docs.google.com/spreadsheets/d/1cysxO9JDLIQH0y6yMfmX8KUYX-H2HyHp9BjaRMaBl-U/edit#gid=0
