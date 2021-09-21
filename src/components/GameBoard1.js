@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { dbService, storageService } from "../fbase";
 import GameResult from "./GameResult";
 import GameRules from "./GameRules";
 import "../styles/GameBoard.css";
 import "../styles/GameRules.css";
+import logo from "../assets/logo.gif";
 
 const kindOfCrimes = 31;
 
@@ -198,7 +199,10 @@ const GameBoard1 = ({ criminals, userObj, setUserObj }) => {
       />
     )
   ) : (
-    <div>[Game Loading...]</div>
+    <div className="loading">
+      <img src={logo} alt=""  className="loadingLogo"/>
+      Loading...
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import AppRouter from "./components/AppRouter";
 import {authService, dbService} from "./fbase";
+import './index.css';
 import logo from './assets/logo.gif';
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
-        let point = 50;
-        let level = "LV.1";
+        let point = 200;
+        let level = "일반인";
         dbService
           .collection("users")
           .doc(user.uid)

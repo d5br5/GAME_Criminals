@@ -1,9 +1,10 @@
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {storageService} from "../fbase";
 import GameResult from "./GameResult";
 import GameRules from "./GameRules";
 import "../styles/GameBoard.css";
 import "../styles/GameRules.css";
+import logo from "../assets/logo.gif";
 
 async function fetchImgs(criminals) {
   const imgUrls = await Promise.all([
@@ -213,7 +214,10 @@ const GameBoard2 = ({criminals, userObj, setUserObj}) => {
         <GameResult rightAnswer={rightAnswer * 2} userObj={userObj} setUserObj={setUserObj}/>
       )
     ) : (
-      <div>[Game Loading...]</div>
+      <div className="loading">
+        <img src={logo} alt=""  className="loadingLogo"/>
+        Loading...
+      </div>
     )
   )
 

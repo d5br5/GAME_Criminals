@@ -350,3 +350,19 @@
     text-decoration: none;
     vertical-align: top;
 }
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.loadingLogo{
+    width: 500px;
+    margin-bottom: 30px;
+}
