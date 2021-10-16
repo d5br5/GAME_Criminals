@@ -55,12 +55,3 @@
 ### /ranking
 - 전체 유저의 순위, 닉네임, 포인트, 레벨 확인 가능 (포인트 내림차순)
 - 유저들의 포인트 변동시 그에 따라 레벨이 실시간으로 변동
-
-
-
-
-### 수업 git
-- https://github.com/snuwebprogramming-21-1/final-project
-  
-### 조별주제
-- https://docs.google.com/spreadsheets/d/1cysxO9JDLIQH0y6yMfmX8KUYX-H2HyHp9BjaRMaBl-U/edit#gid=0
