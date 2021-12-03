@@ -2,13 +2,9 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/40906871/144459871-289ae68f-4900-4c96-b237-9f9ee5737398.png" height="240"/><img src="https://user-images.githubusercontent.com/40906871/144459956-016f1f13-c28f-45bb-804f-01c2fc4425a2.png" height="240"/><img src="https://user-images.githubusercontent.com/40906871/144460081-b6239ecc-e3ea-4cfb-abf1-3175573dfb70.png" height="240"/></p>
 
-
-
-
-
 ## About the Project
 
-### purpose
+### Purpose
 - 웹브라우저에서 동작하는 게임을 제작한다.
 - 서버 및 데이터베이스 기능을 제공하는 Firebase의 사용법을 익힌다. 
 - React 프레임워크를 사용하여 프론트엔드를 구성한다.
