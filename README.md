@@ -1,6 +1,6 @@
 # 범죄자 관상 테스트
 
-<p align="center"><img src="https://user-images.githubusercontent.com/40906871/144459871-289ae68f-4900-4c96-b237-9f9ee5737398.png" height="250"/><img src="https://user-images.githubusercontent.com/40906871/144459956-016f1f13-c28f-45bb-804f-01c2fc4425a2.png" height="250"/><img src="https://user-images.githubusercontent.com/40906871/144460081-b6239ecc-e3ea-4cfb-abf1-3175573dfb70.png" height="250"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/40906871/144459871-289ae68f-4900-4c96-b237-9f9ee5737398.png" height="240"/><img src="https://user-images.githubusercontent.com/40906871/144459956-016f1f13-c28f-45bb-804f-01c2fc4425a2.png" height="240"/><img src="https://user-images.githubusercontent.com/40906871/144460081-b6239ecc-e3ea-4cfb-abf1-3175573dfb70.png" height="240"/></p>
 
 
 
