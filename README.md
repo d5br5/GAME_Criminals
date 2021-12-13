@@ -25,7 +25,7 @@
 
 ### Install
 
-:boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 브라우저 콘솔에 'FirebaseAppImpl' 객체 출력되는지 확인 :boom:
+:boom: Clone this -> $ npm install -> $ yarn start -> 실행 후 콘솔에 'FirebaseAppImpl' 객체 출력되는지 확인 :boom:
 :boom: 코드 작성 중 발생하는 모든 문제는 이슈에 남겨주세요. :boom:
 
 ## Details
